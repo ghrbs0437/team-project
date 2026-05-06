@@ -1,7 +1,7 @@
 import os
 
 
-DEFAULT_DATABASE_URL = "postgresql+psycopg://postgres:postgres@localhost:5432/team_project"
+DEFAULT_DATABASE_URL = "postgresql+psycopg://postgres:postgres@localhost:5432/soma17ai35"
 
 
 def get_database_url() -> str:

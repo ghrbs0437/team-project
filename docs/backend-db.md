@@ -14,7 +14,7 @@ Connection values:
 ```text
 Host: localhost
 Port: 5432
-Database: team_project
+Database: soma17ai35
 Username: postgres
 Password: postgres
 ```
@@ -22,7 +22,7 @@ Password: postgres
 SQLAlchemy URL:
 
 ```env
-DATABASE_URL=postgresql+psycopg://postgres:postgres@localhost:5432/team_project
+DATABASE_URL=postgresql+psycopg://postgres:postgres@localhost:5432/soma17ai35
 ```
 
 ## DBeaver
@@ -30,7 +30,7 @@ DATABASE_URL=postgresql+psycopg://postgres:postgres@localhost:5432/team_project
 Create a PostgreSQL connection with the values above. After connecting, check:
 
 ```text
-Databases > team_project > Schemas > public > Tables
+Databases > soma17ai35 > Schemas > public > Tables
 ```
 
 Expected tables after running `backend\init-db.bat`:
