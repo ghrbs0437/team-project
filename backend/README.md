@@ -4,10 +4,10 @@ FastAPI, PostgreSQL, user CRUD, embeddings, and recommendation API live here.
 
 ## Local Setup
 
-```powershell
-cd backend
+```cmd
+cd C:\Users\USER\Github\team-project\backend
 python -m venv .venv
-.\.venv\Scripts\Activate.ps1
+.venv\Scripts\activate.bat
 pip install -r requirements.txt
 ```
 
@@ -15,14 +15,14 @@ pip install -r requirements.txt
 
 Initialize database tables:
 
-```powershell
-.\init-db.bat
+```cmd
+init-db.bat
 ```
 
 Run API server:
 
-```powershell
-.\dev.bat
+```cmd
+dev.bat
 ```
 
 Health check:
@@ -33,8 +33,8 @@ GET http://localhost:8000/health
 
 ## Test
 
-```powershell
-.\test.bat
+```cmd
+test.bat
 ```
 
 ## Current API
