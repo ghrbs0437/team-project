@@ -13,6 +13,14 @@ pip install -r requirements.txt
 
 ## Run
 
+Initialize database tables:
+
+```powershell
+python -m app.core.init_db
+```
+
+Run API server:
+
 ```powershell
 uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 ```
@@ -27,5 +35,16 @@ GET http://localhost:8000/health
 
 ```powershell
 pytest
+```
+
+## Current API
+
+```text
+GET /health
+POST /users
+GET /users
+GET /users/{user_id}
+PATCH /users/{user_id}
+DELETE /users/{user_id}
 ```
 
