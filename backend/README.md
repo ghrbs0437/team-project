@@ -16,13 +16,13 @@ pip install -r requirements.txt
 Initialize database tables:
 
 ```powershell
-python -m app.core.init_db
+.\init-db.bat
 ```
 
 Run API server:
 
 ```powershell
-uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+.\dev.bat
 ```
 
 Health check:
@@ -34,7 +34,7 @@ GET http://localhost:8000/health
 ## Test
 
 ```powershell
-pytest
+.\test.bat
 ```
 
 ## Current API
