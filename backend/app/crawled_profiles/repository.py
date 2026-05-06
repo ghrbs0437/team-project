@@ -20,6 +20,18 @@ def get_crawled_profile(db: Session, profile_id: int) -> CrawledProfile | None:
     return db.get(CrawledProfile, profile_id)
 
 
+def get_crawled_profile_by_external_key(
+    db: Session,
+    source: str,
+    external_key: str,
+) -> CrawledProfile | None:
+    statement = select(CrawledProfile).where(
+        CrawledProfile.source == source,
+        CrawledProfile.external_key == external_key,
+    )
+    return db.scalars(statement).first()
+
+
 def list_crawled_profiles(
     db: Session,
     skip: int = 0,

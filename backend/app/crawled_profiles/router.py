@@ -36,11 +36,22 @@ def import_crawled_profiles(
     db: Session = Depends(get_db),
 ) -> CrawledProfileImportResult:
     imported_count = 0
+    skipped_count = 0
     for title, raw_text_items in payload.items():
         for index, raw_text in enumerate(raw_text_items):
+            external_key = f"{title}#{index}"
+            existing_profile = repository.get_crawled_profile_by_external_key(
+                db,
+                source="json-import",
+                external_key=external_key,
+            )
+            if existing_profile is not None:
+                skipped_count += 1
+                continue
+
             profile_create = CrawledProfileCreate(
                 source="json-import",
-                external_key=f"{title}#{index}",
+                external_key=external_key,
                 title=title,
                 raw_text=raw_text,
                 parsed_json={"title": title, "index": index},
@@ -48,7 +59,10 @@ def import_crawled_profiles(
             repository.create_crawled_profile(db, profile_create)
             imported_count += 1
 
-    return CrawledProfileImportResult(imported_count=imported_count)
+    return CrawledProfileImportResult(
+        imported_count=imported_count,
+        skipped_count=skipped_count,
+    )
 
 
 @router.get("/{profile_id}", response_model=CrawledProfileRead)

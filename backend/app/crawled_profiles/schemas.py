@@ -25,3 +25,4 @@ class CrawledProfileRead(CrawledProfileBase):
 
 class CrawledProfileImportResult(BaseModel):
     imported_count: int
+    skipped_count: int

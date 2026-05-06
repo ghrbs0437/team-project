@@ -74,7 +74,27 @@ def test_import_json_payload(client: TestClient) -> None:
     )
 
     assert import_response.status_code == 200
-    assert import_response.json() == {"imported_count": 3}
+    assert import_response.json() == {"imported_count": 3, "skipped_count": 0}
+
+    list_response = client.get("/crawled-profiles")
+
+    assert list_response.status_code == 200
+    assert len(list_response.json()) == 3
+
+
+def test_import_json_payload_skips_existing_external_keys(client: TestClient) -> None:
+    payload = {
+        "profile A | Notion": ["first profile text", "second profile text"],
+        "profile B | Notion": ["third profile text"],
+    }
+
+    first_import_response = client.post("/crawled-profiles/import-json", json=payload)
+    second_import_response = client.post("/crawled-profiles/import-json", json=payload)
+
+    assert first_import_response.status_code == 200
+    assert first_import_response.json() == {"imported_count": 3, "skipped_count": 0}
+    assert second_import_response.status_code == 200
+    assert second_import_response.json() == {"imported_count": 0, "skipped_count": 3}
 
     list_response = client.get("/crawled-profiles")
 

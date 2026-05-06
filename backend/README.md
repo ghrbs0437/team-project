@@ -68,3 +68,13 @@ DELETE /crawled-profiles/{profile_id}
 POST /crawled-profiles/import-json
 ```
 
+`POST /crawled-profiles/import-json` skips duplicated crawled profiles by
+`source + external_key` and returns both counts:
+
+```json
+{
+  "imported_count": 0,
+  "skipped_count": 297
+}
+```
+
