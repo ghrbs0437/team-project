@@ -23,6 +23,7 @@ def get_db() -> Generator[Session, None, None]:
 
 
 def create_database_tables() -> None:
+    import app.crawled_profiles.models  # noqa: F401
     import app.users.models  # noqa: F401
 
     Base.metadata.create_all(bind=engine)

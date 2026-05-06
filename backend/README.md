@@ -46,5 +46,10 @@ GET /users
 GET /users/{user_id}
 PATCH /users/{user_id}
 DELETE /users/{user_id}
+POST /crawled-profiles
+GET /crawled-profiles
+GET /crawled-profiles/{profile_id}
+DELETE /crawled-profiles/{profile_id}
+POST /crawled-profiles/import-json
 ```
 
