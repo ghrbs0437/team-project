@@ -15,14 +15,14 @@ Connection values:
 Host: localhost
 Port: 5432
 Database: soma17ai35
-Username: postgres
-Password: postgres
+Username: soma
+Password: soma
 ```
 
 SQLAlchemy URL:
 
 ```env
-DATABASE_URL=postgresql+psycopg://postgres:postgres@localhost:5432/soma17ai35
+DATABASE_URL=postgresql+psycopg://soma:soma@localhost:5432/soma17ai35
 ```
 
 ## DBeaver
