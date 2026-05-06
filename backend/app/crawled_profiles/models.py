@@ -12,6 +12,7 @@ class CrawledProfile(Base):
     id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
     source: Mapped[str] = mapped_column(String(100), nullable=False, index=True)
     external_key: Mapped[str | None] = mapped_column(String(255), nullable=True, index=True)
+    source_url: Mapped[str | None] = mapped_column(String(500), nullable=True, index=True)
     title: Mapped[str] = mapped_column(String(255), nullable=False, index=True)
     raw_text: Mapped[str] = mapped_column(Text, nullable=False)
     parsed_json: Mapped[dict | None] = mapped_column(JSON, nullable=True)

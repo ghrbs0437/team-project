@@ -5,6 +5,7 @@ from app.core.database import get_db
 from app.crawled_profiles import repository
 from app.crawled_profiles.schemas import (
     CrawledProfileCreate,
+    CrawledProfileImportItem,
     CrawledProfileImportResult,
     CrawledProfileRead,
 )
@@ -32,37 +33,80 @@ def list_crawled_profiles(
 
 @router.post("/import-json", response_model=CrawledProfileImportResult)
 def import_crawled_profiles(
-    payload: dict[str, list[str]] = Body(...),
+    payload: dict[str, list[str]] | list[CrawledProfileImportItem] = Body(...),
     db: Session = Depends(get_db),
 ) -> CrawledProfileImportResult:
     imported_count = 0
     skipped_count = 0
-    for title, raw_text_items in payload.items():
-        for index, raw_text in enumerate(raw_text_items):
-            external_key = f"{title}#{index}"
-            existing_profile = repository.get_crawled_profile_by_external_key(
-                db,
-                source="json-import",
-                external_key=external_key,
-            )
-            if existing_profile is not None:
-                skipped_count += 1
-                continue
 
-            profile_create = CrawledProfileCreate(
-                source="json-import",
-                external_key=external_key,
-                title=title,
-                raw_text=raw_text,
-                parsed_json={"title": title, "index": index},
-            )
-            repository.create_crawled_profile(db, profile_create)
-            imported_count += 1
+    for profile_create in build_crawled_profile_import_items(payload):
+        if is_duplicate_crawled_profile(db, profile_create):
+            skipped_count += 1
+            continue
+
+        repository.create_crawled_profile(db, profile_create)
+        imported_count += 1
 
     return CrawledProfileImportResult(
         imported_count=imported_count,
         skipped_count=skipped_count,
     )
+
+
+def build_crawled_profile_import_items(
+    payload: dict[str, list[str]] | list[CrawledProfileImportItem],
+) -> list[CrawledProfileCreate]:
+    if isinstance(payload, list):
+        return [
+            CrawledProfileCreate(
+                source=item.source,
+                external_key=item.source_url or item.external_key,
+                source_url=item.source_url,
+                title=item.title,
+                raw_text=item.raw_text,
+                parsed_json=item.parsed_json,
+            )
+            for item in payload
+        ]
+
+    profile_creates: list[CrawledProfileCreate] = []
+    for title, raw_text_items in payload.items():
+        for index, raw_text in enumerate(raw_text_items):
+            external_key = f"{title}#{index}"
+            profile_creates.append(
+                CrawledProfileCreate(
+                    source="json-import",
+                    external_key=external_key,
+                    source_url=None,
+                    title=title,
+                    raw_text=raw_text,
+                    parsed_json={"title": title, "index": index},
+                )
+            )
+    return profile_creates
+
+
+def is_duplicate_crawled_profile(
+    db: Session,
+    profile_create: CrawledProfileCreate,
+) -> bool:
+    if profile_create.source_url is not None:
+        existing_profile_by_url = repository.get_crawled_profile_by_source_url(
+            db,
+            profile_create.source_url,
+        )
+        if existing_profile_by_url is not None:
+            return True
+
+    if profile_create.external_key is None:
+        return False
+
+    existing_profile_by_key = repository.get_crawled_profile_by_external_key(
+        db,
+        source=profile_create.source,
+        external_key=profile_create.external_key,
+    )
+    return existing_profile_by_key is not None
 
 
 @router.get("/{profile_id}", response_model=CrawledProfileRead)

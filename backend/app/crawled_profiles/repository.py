@@ -32,6 +32,14 @@ def get_crawled_profile_by_external_key(
     return db.scalars(statement).first()
 
 
+def get_crawled_profile_by_source_url(
+    db: Session,
+    source_url: str,
+) -> CrawledProfile | None:
+    statement = select(CrawledProfile).where(CrawledProfile.source_url == source_url)
+    return db.scalars(statement).first()
+
+
 def list_crawled_profiles(
     db: Session,
     skip: int = 0,

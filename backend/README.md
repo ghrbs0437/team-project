@@ -69,12 +69,33 @@ POST /crawled-profiles/import-json
 ```
 
 `POST /crawled-profiles/import-json` skips duplicated crawled profiles by
-`source + external_key` and returns both counts:
+`source_url` first, then `source + external_key`, and returns both counts:
 
 ```json
 {
   "imported_count": 0,
   "skipped_count": 297
 }
+```
+
+It supports the current crawled JSON shape:
+
+```json
+{
+  "profile A | Notion": ["first profile text"]
+}
+```
+
+It also supports object arrays with source URLs:
+
+```json
+[
+  {
+    "title": "profile A | Notion",
+    "source": "notion",
+    "source_url": "https://example.com/profile-a",
+    "raw_text": "first profile text"
+  }
+]
 ```
 

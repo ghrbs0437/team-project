@@ -65,6 +65,7 @@ Stores raw crawled profile data before ontology, embedding, and user conversion.
 | id | integer | Primary key |
 | source | varchar(100) | Source such as notion or json-import |
 | external_key | varchar(255), nullable | External identifier such as URL, page id, or title#index |
+| source_url | varchar(500), nullable | Original crawled page URL |
 | title | varchar(255) | Crawled profile title |
 | raw_text | text | Raw crawled profile text |
 | parsed_json | json, nullable | Optional structured metadata |
