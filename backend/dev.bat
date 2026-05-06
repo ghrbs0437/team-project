@@ -9,4 +9,4 @@ if not exist "%PYTHON_PATH%" (
     exit /b 1
 )
 
-"%PYTHON_PATH%" -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+"%PYTHON_PATH%" -m uvicorn app.main:app --host 0.0.0.0 --port 8000

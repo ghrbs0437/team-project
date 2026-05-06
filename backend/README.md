@@ -13,16 +13,31 @@ pip install -r requirements.txt
 
 ## Run
 
+Start local PostgreSQL:
+
+```cmd
+cd C:\Users\USER\Github\team-project
+docker compose up -d db
+```
+
 Initialize database tables:
 
 ```cmd
+cd C:\Users\USER\Github\team-project\backend
 init-db.bat
 ```
 
 Run API server:
 
 ```cmd
+cd C:\Users\USER\Github\team-project\backend
 dev.bat
+```
+
+Swagger UI:
+
+```text
+http://localhost:8000/docs
 ```
 
 Health check:
