@@ -7,6 +7,7 @@ from app.crawled_profiles.schemas import (
     CrawledProfileCreate,
     CrawledProfileImportItem,
     CrawledProfileImportResult,
+    CrawledProfileListResponse,
     CrawledProfileRead,
 )
 
@@ -22,13 +23,29 @@ def create_crawled_profile(
     return repository.create_crawled_profile(db, profile_create)
 
 
-@router.get("", response_model=list[CrawledProfileRead])
+@router.get("", response_model=CrawledProfileListResponse)
 def list_crawled_profiles(
-    skip: int = Query(default=0, ge=0),
-    limit: int = Query(default=100, ge=1, le=100),
+    page: int = Query(default=1, ge=1),
+    size: int = Query(default=20, ge=1, le=100),
+    q: str | None = Query(default=None),
     db: Session = Depends(get_db),
-) -> list[CrawledProfileRead]:
-    return repository.list_crawled_profiles(db, skip=skip, limit=limit)
+) -> CrawledProfileListResponse:
+    skip = (page - 1) * size
+    crawled_profiles = repository.list_crawled_profiles(
+        db,
+        skip=skip,
+        limit=size,
+        search_query=q,
+    )
+    total = repository.count_crawled_profiles(db, search_query=q)
+
+    return CrawledProfileListResponse(
+        crawled_profiles=crawled_profiles,
+        page=page,
+        size=size,
+        total=total,
+        has_next=page * size < total,
+    )
 
 
 @router.post("/import-json", response_model=CrawledProfileImportResult)

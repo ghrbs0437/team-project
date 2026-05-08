@@ -33,6 +33,14 @@ class CrawledProfileRead(CrawledProfileBase):
     created_at: datetime
 
 
+class CrawledProfileListResponse(BaseModel):
+    crawled_profiles: list[CrawledProfileRead]
+    page: int
+    size: int
+    total: int
+    has_next: bool
+
+
 class CrawledProfileImportResult(BaseModel):
     imported_count: int
     skipped_count: int
