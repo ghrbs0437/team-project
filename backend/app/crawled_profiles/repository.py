@@ -1,4 +1,4 @@
-from sqlalchemy import select
+from sqlalchemy import func, or_, select
 from sqlalchemy.orm import Session
 
 from app.crawled_profiles.models import CrawledProfile
@@ -44,9 +44,42 @@ def list_crawled_profiles(
     db: Session,
     skip: int = 0,
     limit: int = 100,
+    search_query: str | None = None,
 ) -> list[CrawledProfile]:
-    statement = select(CrawledProfile).offset(skip).limit(limit).order_by(CrawledProfile.id)
+    statement = build_crawled_profiles_statement(search_query)
+    statement = statement.offset(skip).limit(limit).order_by(CrawledProfile.id)
     return list(db.scalars(statement).all())
+
+
+def list_all_crawled_profiles(db: Session) -> list[CrawledProfile]:
+    statement = select(CrawledProfile).order_by(CrawledProfile.id)
+    return list(db.scalars(statement).all())
+
+
+def count_crawled_profiles(
+    db: Session,
+    search_query: str | None = None,
+) -> int:
+    filtered_profiles = build_crawled_profiles_statement(search_query).subquery()
+    statement = select(func.count()).select_from(filtered_profiles)
+    return db.scalar(statement) or 0
+
+
+def build_crawled_profiles_statement(search_query: str | None = None):
+    statement = select(CrawledProfile)
+
+    if search_query:
+        search_pattern = f"%{search_query}%"
+        statement = statement.where(
+            or_(
+                CrawledProfile.title.ilike(search_pattern),
+                CrawledProfile.raw_text.ilike(search_pattern),
+                CrawledProfile.source.ilike(search_pattern),
+                CrawledProfile.source_url.ilike(search_pattern),
+            )
+        )
+
+    return statement
 
 
 def delete_crawled_profile(db: Session, profile: CrawledProfile) -> None:

@@ -45,6 +45,10 @@ def test_create_and_read_user(client: TestClient) -> None:
         "/users",
         json={
             "name": "junhee",
+            "title": "Backend profile",
+            "source": "manual",
+            "source_url": "https://example.com/users/junhee",
+            "tags": ["backend", "fastapi"],
             "role": "Backend",
             "introduction": "Responsible for FastAPI and PostgreSQL.",
             "tech_stack": ["Python", "FastAPI", "PostgreSQL"],
@@ -57,6 +61,10 @@ def test_create_and_read_user(client: TestClient) -> None:
     created_user = create_response.json()
     assert created_user["id"] == 1
     assert created_user["name"] == "junhee"
+    assert created_user["title"] == "Backend profile"
+    assert created_user["source"] == "manual"
+    assert created_user["source_url"] == "https://example.com/users/junhee"
+    assert created_user["tags"] == ["backend", "fastapi"]
     assert created_user["tech_stack"] == ["Python", "FastAPI", "PostgreSQL"]
 
     read_response = client.get("/users/1")
@@ -74,10 +82,15 @@ def test_list_update_and_delete_user(client: TestClient) -> None:
 
     update_response = client.patch(
         "/users/1",
-        json={"role": "UI Designer", "interests": ["UX", "Design System"]},
+        json={
+            "role": "UI Designer",
+            "tags": ["frontend", "design"],
+            "interests": ["UX", "Design System"],
+        },
     )
     assert update_response.status_code == 200
     assert update_response.json()["role"] == "UI Designer"
+    assert update_response.json()["tags"] == ["frontend", "design"]
     assert update_response.json()["interests"] == ["UX", "Design System"]
 
     delete_response = client.delete("/users/1")
