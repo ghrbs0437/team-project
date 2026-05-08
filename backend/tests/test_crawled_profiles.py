@@ -81,7 +81,12 @@ def test_import_json_payload(client: TestClient) -> None:
     list_response = client.get("/crawled-profiles")
 
     assert list_response.status_code == 200
-    assert len(list_response.json()) == 3
+    list_body = list_response.json()
+    assert len(list_body["crawled_profiles"]) == 3
+    assert list_body["page"] == 1
+    assert list_body["size"] == 20
+    assert list_body["total"] == 3
+    assert list_body["has_next"] is False
 
 
 def test_import_json_object_array_payload(client: TestClient) -> None:
@@ -110,7 +115,7 @@ def test_import_json_object_array_payload(client: TestClient) -> None:
     list_response = client.get("/crawled-profiles")
 
     assert list_response.status_code == 200
-    profiles = list_response.json()
+    profiles = list_response.json()["crawled_profiles"]
     assert len(profiles) == 2
     assert profiles[0]["external_key"] == "https://example.com/profile-a"
     assert profiles[0]["source_url"] == "https://example.com/profile-a"
@@ -143,7 +148,9 @@ def test_import_json_object_array_payload_skips_existing_source_urls(
     list_response = client.get("/crawled-profiles")
 
     assert list_response.status_code == 200
-    assert len(list_response.json()) == 1
+    list_body = list_response.json()
+    assert len(list_body["crawled_profiles"]) == 1
+    assert list_body["total"] == 1
 
 
 def test_import_json_payload_skips_existing_external_keys(client: TestClient) -> None:
@@ -163,4 +170,61 @@ def test_import_json_payload_skips_existing_external_keys(client: TestClient) ->
     list_response = client.get("/crawled-profiles")
 
     assert list_response.status_code == 200
-    assert len(list_response.json()) == 3
+    assert len(list_response.json()["crawled_profiles"]) == 3
+
+
+def test_list_crawled_profiles_supports_pagination_and_search(client: TestClient) -> None:
+    import_response = client.post(
+        "/crawled-profiles/import-json",
+        json=[
+            {
+                "title": "backend profile",
+                "source": "notion",
+                "source_url": "https://example.com/backend",
+                "raw_text": "FastAPI and PostgreSQL",
+            },
+            {
+                "title": "frontend profile",
+                "source": "notion",
+                "source_url": "https://example.com/frontend",
+                "raw_text": "React and TypeScript",
+            },
+            {
+                "title": "ai profile",
+                "source": "notion",
+                "source_url": "https://example.com/ai",
+                "raw_text": "LLM and recommendation",
+            },
+        ],
+    )
+    assert import_response.status_code == 200
+
+    first_page_response = client.get("/crawled-profiles?page=1&size=2")
+
+    assert first_page_response.status_code == 200
+    first_page_body = first_page_response.json()
+    assert len(first_page_body["crawled_profiles"]) == 2
+    assert first_page_body["page"] == 1
+    assert first_page_body["size"] == 2
+    assert first_page_body["total"] == 3
+    assert first_page_body["has_next"] is True
+
+    search_response = client.get("/crawled-profiles?q=react")
+
+    assert search_response.status_code == 200
+    search_body = search_response.json()
+    assert search_body["total"] == 1
+    assert search_body["crawled_profiles"][0]["title"] == "frontend profile"
+
+
+def test_allows_vite_dev_server_cors_preflight(client: TestClient) -> None:
+    response = client.options(
+        "/crawled-profiles",
+        headers={
+            "Origin": "http://localhost:5173",
+            "Access-Control-Request-Method": "GET",
+        },
+    )
+
+    assert response.status_code == 200
+    assert response.headers["access-control-allow-origin"] == "http://localhost:5173"
