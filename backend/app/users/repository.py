@@ -17,6 +17,25 @@ def get_user(db: Session, user_id: int) -> User | None:
     return db.get(User, user_id)
 
 
+def get_user_by_source_url(db: Session, source_url: str) -> User | None:
+    statement = select(User).where(User.source_url == source_url)
+    return db.scalars(statement).first()
+
+
+def get_user_by_source_title_and_raw_text(
+    db: Session,
+    source: str | None,
+    title: str | None,
+    raw_text: str | None,
+) -> User | None:
+    statement = select(User).where(
+        User.source == source,
+        User.title == title,
+        User.raw_text == raw_text,
+    )
+    return db.scalars(statement).first()
+
+
 def list_users(db: Session, skip: int = 0, limit: int = 100) -> list[User]:
     statement = select(User).offset(skip).limit(limit).order_by(User.id)
     return list(db.scalars(statement).all())

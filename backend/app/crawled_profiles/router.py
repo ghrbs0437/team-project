@@ -3,13 +3,17 @@ from sqlalchemy.orm import Session
 
 from app.core.database import get_db
 from app.crawled_profiles import repository
+from app.crawled_profiles.models import CrawledProfile
 from app.crawled_profiles.schemas import (
+    CrawledProfileConvertToUsersResult,
     CrawledProfileCreate,
     CrawledProfileImportItem,
     CrawledProfileImportResult,
     CrawledProfileListResponse,
     CrawledProfileRead,
 )
+from app.users import repository as users_repository
+from app.users.schemas import UserCreate
 
 
 router = APIRouter(prefix="/crawled-profiles", tags=["crawled-profiles"])
@@ -70,19 +74,33 @@ def import_crawled_profiles(
     )
 
 
+@router.post("/convert-to-users", response_model=CrawledProfileConvertToUsersResult)
+def convert_crawled_profiles_to_users(
+    db: Session = Depends(get_db),
+) -> CrawledProfileConvertToUsersResult:
+    converted_count = 0
+    skipped_count = 0
+
+    for crawled_profile in repository.list_all_crawled_profiles(db):
+        if is_existing_user_for_crawled_profile(db, crawled_profile):
+            skipped_count += 1
+            continue
+
+        users_repository.create_user(db, build_user_create_from_crawled_profile(crawled_profile))
+        converted_count += 1
+
+    return CrawledProfileConvertToUsersResult(
+        converted_count=converted_count,
+        skipped_count=skipped_count,
+    )
+
+
 def build_crawled_profile_import_items(
     payload: dict[str, list[str]] | list[CrawledProfileImportItem],
 ) -> list[CrawledProfileCreate]:
     if isinstance(payload, list):
         return [
-            CrawledProfileCreate(
-                source=item.source,
-                external_key=item.source_url or item.external_key,
-                source_url=item.source_url,
-                title=item.title,
-                raw_text=item.raw_text,
-                parsed_json=item.parsed_json,
-            )
+            build_crawled_profile_create_from_import_item(item)
             for item in payload
         ]
 
@@ -101,6 +119,77 @@ def build_crawled_profile_import_items(
                 )
             )
     return profile_creates
+
+
+def build_crawled_profile_create_from_import_item(
+    item: CrawledProfileImportItem,
+) -> CrawledProfileCreate:
+    title = item.title or item.name or "이름 없음"
+    parsed_json = dict(item.parsed_json or {})
+
+    if item.name is not None:
+        parsed_json["name"] = item.name
+    if item.tags:
+        parsed_json["tags"] = item.tags
+
+    return CrawledProfileCreate(
+        source=item.source,
+        external_key=item.source_url or item.external_key,
+        source_url=item.source_url,
+        title=title,
+        raw_text=item.raw_text,
+        parsed_json=parsed_json or None,
+    )
+
+
+def build_user_create_from_crawled_profile(crawled_profile: CrawledProfile) -> UserCreate:
+    parsed_json = crawled_profile.parsed_json or {}
+    tags = normalize_tags(parsed_json.get("tags"))
+    name = normalize_text(parsed_json.get("name")) or crawled_profile.title
+    role = normalize_text(parsed_json.get("role"))
+    introduction = normalize_text(parsed_json.get("introduction")) or crawled_profile.raw_text
+
+    return UserCreate(
+        name=name,
+        title=crawled_profile.title,
+        source=crawled_profile.source,
+        source_url=crawled_profile.source_url,
+        tags=tags,
+        role=role,
+        introduction=introduction,
+        raw_text=crawled_profile.raw_text,
+    )
+
+
+def is_existing_user_for_crawled_profile(
+    db: Session,
+    crawled_profile: CrawledProfile,
+) -> bool:
+    if crawled_profile.source_url is not None:
+        existing_user_by_url = users_repository.get_user_by_source_url(
+            db,
+            crawled_profile.source_url,
+        )
+        if existing_user_by_url is not None:
+            return True
+
+    existing_user_by_content = users_repository.get_user_by_source_title_and_raw_text(
+        db,
+        source=crawled_profile.source,
+        title=crawled_profile.title,
+        raw_text=crawled_profile.raw_text,
+    )
+    return existing_user_by_content is not None
+
+
+def normalize_tags(value: object) -> list[str]:
+    if not isinstance(value, list):
+        return []
+    return [tag for tag in value if isinstance(tag, str)]
+
+
+def normalize_text(value: object) -> str | None:
+    return value if isinstance(value, str) and value else None
 
 
 def is_duplicate_crawled_profile(

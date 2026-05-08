@@ -228,3 +228,66 @@ def test_allows_vite_dev_server_cors_preflight(client: TestClient) -> None:
 
     assert response.status_code == 200
     assert response.headers["access-control-allow-origin"] == "http://localhost:5173"
+
+
+def test_import_convert_and_read_users_demo_flow(client: TestClient) -> None:
+    import_response = client.post(
+        "/crawled-profiles/import-json",
+        json=[
+            {
+                "name": "김민준",
+                "title": "김민준 | Notion",
+                "source": "notion",
+                "source_url": "https://example.com/minjun",
+                "tags": ["backend", "fastapi"],
+                "raw_text": "FastAPI 기반 추천 API 개발에 관심이 있습니다.",
+            },
+            {
+                "name": "이서윤",
+                "source": "github",
+                "source_url": "https://github.com/seoyun",
+                "tags": ["frontend", "react"],
+                "raw_text": "React 기반 데모 UI를 빠르게 구현합니다.",
+                "parsed_json": {"role": "Frontend"},
+            },
+        ],
+    )
+    assert import_response.status_code == 200
+    assert import_response.json() == {"imported_count": 2, "skipped_count": 0}
+
+    convert_response = client.post("/crawled-profiles/convert-to-users")
+
+    assert convert_response.status_code == 200
+    assert convert_response.json() == {"converted_count": 2, "skipped_count": 0}
+
+    duplicate_convert_response = client.post("/crawled-profiles/convert-to-users")
+
+    assert duplicate_convert_response.status_code == 200
+    assert duplicate_convert_response.json() == {"converted_count": 0, "skipped_count": 2}
+
+    users_response = client.get("/users")
+
+    assert users_response.status_code == 200
+    users = users_response.json()
+    assert len(users) == 2
+    assert users[0]["name"] == "김민준"
+    assert users[0]["title"] == "김민준 | Notion"
+    assert users[0]["source"] == "notion"
+    assert users[0]["source_url"] == "https://example.com/minjun"
+    assert users[0]["tags"] == ["backend", "fastapi"]
+    assert users[0]["introduction"] == "FastAPI 기반 추천 API 개발에 관심이 있습니다."
+    assert users[1]["name"] == "이서윤"
+    assert users[1]["title"] == "이서윤"
+    assert users[1]["role"] == "Frontend"
+
+    read_response = client.get("/users/1")
+
+    assert read_response.status_code == 200
+    assert read_response.json()["source_url"] == "https://example.com/minjun"
+
+
+def test_convert_to_users_is_exposed_in_openapi(client: TestClient) -> None:
+    openapi_response = client.get("/openapi.json")
+
+    assert openapi_response.status_code == 200
+    assert "/crawled-profiles/convert-to-users" in openapi_response.json()["paths"]

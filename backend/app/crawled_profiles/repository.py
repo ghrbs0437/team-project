@@ -51,6 +51,11 @@ def list_crawled_profiles(
     return list(db.scalars(statement).all())
 
 
+def list_all_crawled_profiles(db: Session) -> list[CrawledProfile]:
+    statement = select(CrawledProfile).order_by(CrawledProfile.id)
+    return list(db.scalars(statement).all())
+
+
 def count_crawled_profiles(
     db: Session,
     search_query: str | None = None,
