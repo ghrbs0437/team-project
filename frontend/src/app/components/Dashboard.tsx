@@ -5,7 +5,7 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? 'http://localhost:8000
 const PAGE_SIZE = 20;
 
 type CrawledProfileSummary = {
-  profile_id: number;
+  id: number;
   name: string;
   tags: string[];
 };
@@ -20,22 +20,78 @@ type CrawledProfileDetail = CrawledProfileSummary & {
 };
 
 type CrawledProfilesResponse = {
-  crawled_profiles: CrawledProfileSummary[];
+  crawled_profiles: RawCrawledProfile[];
   page?: number;
   size?: number;
   total?: number;
   has_next?: boolean;
 };
 
+type RawCrawledProfile = {
+  id?: number | string;
+  profile_id?: number | string;
+  name?: string;
+  title?: string;
+  source?: string;
+  source_url?: string;
+  raw_text?: string;
+  parsed_json?: {
+    tags?: unknown;
+    [key: string]: unknown;
+  } | null;
+  tags?: unknown;
+  created_at?: string;
+  updated_at?: string;
+};
+
 function normalizeTags(tags: unknown): string[] {
   return Array.isArray(tags) ? tags.filter((tag): tag is string => typeof tag === 'string') : [];
 }
 
-function normalizeSummary(profile: Partial<CrawledProfileSummary>): CrawledProfileSummary {
+function getDisplayTags(profile: RawCrawledProfile): string[] {
+  return normalizeTags(profile.parsed_json?.tags ?? profile.tags);
+}
+
+function normalizeSummary(profile: RawCrawledProfile): CrawledProfileSummary {
   return {
-    profile_id: Number(profile.profile_id),
-    name: profile.name ?? '이름 없음',
-    tags: normalizeTags(profile.tags),
+    id: Number(profile.id ?? profile.profile_id),
+    name: profile.title ?? profile.name ?? '이름 없음',
+    tags: getDisplayTags(profile),
+  };
+}
+
+function normalizeDetail(profile: RawCrawledProfile): CrawledProfileDetail {
+  return {
+    ...profile,
+    id: Number(profile.id ?? profile.profile_id),
+    name: profile.title ?? profile.name ?? '이름 없음',
+    tags: getDisplayTags(profile),
+  };
+}
+
+function normalizeProfilesResponse(
+  data: CrawledProfilesResponse | RawCrawledProfile[],
+  requestedPage: number,
+  previousCount: number,
+) {
+  if (Array.isArray(data)) {
+    const crawledProfiles = data.map(normalizeSummary);
+
+    return {
+      crawledProfiles,
+      page: requestedPage,
+      total: previousCount + crawledProfiles.length,
+      hasNext: crawledProfiles.length === PAGE_SIZE,
+    };
+  }
+
+  const crawledProfiles = (data.crawled_profiles ?? []).map(normalizeSummary);
+
+  return {
+    crawledProfiles,
+    page: data.page ?? requestedPage,
+    total: data.total ?? previousCount + crawledProfiles.length,
+    hasNext: Boolean(data.has_next),
   };
 }
 
@@ -84,19 +140,23 @@ export default function Dashboard() {
     setErrorMessage('');
 
     try {
-      const data = await fetchJson<CrawledProfilesResponse>(
+      const data = await fetchJson<CrawledProfilesResponse | RawCrawledProfile[]>(
         buildUrl('/crawled-profiles', {
           page: nextPage,
           size: PAGE_SIZE,
           q: submittedQuery || undefined,
         }),
       );
-      const nextProfiles = (data.crawled_profiles ?? []).map(normalizeSummary);
+      const { crawledProfiles, page, total, hasNext } = normalizeProfilesResponse(
+        data,
+        nextPage,
+        append ? profiles.length : 0,
+      );
 
-      setProfiles((prev) => (append ? [...prev, ...nextProfiles] : nextProfiles));
-      setPage(data.page ?? nextPage);
-      setTotal(data.total ?? nextProfiles.length);
-      setHasNext(Boolean(data.has_next));
+      setProfiles((prev) => (append ? [...prev, ...crawledProfiles] : crawledProfiles));
+      setPage(page);
+      setTotal(total);
+      setHasNext(hasNext);
 
       if (!append) {
         setSelectedProfile(null);
@@ -113,13 +173,8 @@ export default function Dashboard() {
     setErrorMessage('');
 
     try {
-      const data = await fetchJson<CrawledProfileDetail>(buildUrl(`/crawled-profiles/${profileId}`));
-      setSelectedProfile({
-        ...data,
-        profile_id: Number(data.profile_id),
-        name: data.name ?? '이름 없음',
-        tags: normalizeTags(data.tags),
-      });
+      const data = await fetchJson<RawCrawledProfile>(buildUrl(`/crawled-profiles/${profileId}`));
+      setSelectedProfile(normalizeDetail(data));
     } catch (error) {
       setErrorMessage(error instanceof Error ? error.message : '연수생 상세 정보를 가져오지 못했어요.');
     } finally {
@@ -145,6 +200,17 @@ export default function Dashboard() {
       void loadProfiles(page + 1, true);
     }
   };
+
+  const displayedProfiles = submittedQuery
+    ? profiles.filter((profile) => {
+        const query = submittedQuery.toLowerCase();
+
+        return (
+          profile.name.toLowerCase().includes(query) ||
+          profile.tags.some((tag) => tag.toLowerCase().includes(query))
+        );
+      })
+    : profiles;
 
   return (
     <div className="min-h-full bg-gray-50 p-8">
@@ -190,7 +256,11 @@ export default function Dashboard() {
 
           <div className="flex items-center justify-between border-t border-gray-100 pt-4">
             <h3 className="text-sm font-medium text-gray-900">
-              {isLoading && profiles.length === 0 ? '연수생 정보를 불러오는 중' : `총 ${total}명`}
+              {isLoading && profiles.length === 0
+                ? '연수생 정보를 불러오는 중'
+                : submittedQuery
+                  ? `검색 결과 ${displayedProfiles.length}명 / 총 ${total}명`
+                  : `총 ${total}명`}
             </h3>
             <span className="text-xs text-[#939598]">관심 태그를 기준으로 연수생을 살펴보세요</span>
           </div>
@@ -211,15 +281,15 @@ export default function Dashboard() {
               </div>
             )}
 
-            {!isLoading && profiles.length === 0 && (
+            {!isLoading && displayedProfiles.length === 0 && (
               <div className="rounded-lg border border-dashed border-gray-300 bg-white p-10 text-center text-sm text-[#939598]">
                 아직 등록된 연수생이 없습니다.
               </div>
             )}
 
-            {profiles.map((profile) => (
+            {displayedProfiles.map((profile) => (
               <article
-                key={profile.profile_id}
+                key={profile.id}
                 className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm transition-shadow hover:shadow-md"
               >
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
@@ -243,7 +313,7 @@ export default function Dashboard() {
                   </div>
                   <button
                     type="button"
-                    onClick={() => void loadProfileDetail(profile.profile_id)}
+                    onClick={() => void loadProfileDetail(profile.id)}
                     className="rounded border border-[#68BCE9] px-4 py-2 text-sm font-medium text-[#68BCE9] transition-colors hover:bg-[#68BCE9] hover:text-white"
                   >
                     상세 보기

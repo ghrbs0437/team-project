@@ -43,6 +43,13 @@ cd frontend
 pnpm install
 ```
 
+백엔드는 FastAPI 기본 포트인 `8000`, 프론트엔드는 Vite 기본 포트인 `5173`을 기준으로 실행합니다.
+프론트에서 호출할 백엔드 주소를 바꾸려면 `frontend/.env`에 아래 값을 설정합니다.
+
+```bash
+VITE_API_BASE_URL=http://localhost:8000
+```
+
 설치가 끝나면 개발 서버를 실행합니다.
 
 ```bash
