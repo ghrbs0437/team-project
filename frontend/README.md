@@ -62,6 +62,16 @@ pnpm run dev
 http://localhost:5173
 ```
 
+## Docker Compose로 실행하는 방법
+
+프로젝트 루트에서 아래 명령어를 실행하면 프론트엔드, 백엔드, DB를 함께 실행할 수 있습니다.
+
+```bash
+docker compose up --build
+```
+
+프론트엔드 컨테이너는 기본적으로 `http://localhost:5173`에 노출됩니다. 프론트엔드에서 호출하는 백엔드 주소는 루트 `.env`의 `VITE_API_BASE_URL` 값으로 조정합니다.
+
 ## npm으로 실행하는 방법
 
 pnpm 대신 npm을 사용하고 싶다면 아래 순서로 실행할 수 있습니다.
