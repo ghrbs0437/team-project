@@ -46,6 +46,16 @@ Health check:
 GET http://localhost:8000/health
 ```
 
+## Docker Compose
+
+From the project root, the backend can also run as a container with PostgreSQL:
+
+```cmd
+docker compose up --build backend
+```
+
+Container port `8000` is exposed to `http://localhost:8000` by default.
+
 ## Test
 
 ```cmd
@@ -98,4 +108,3 @@ It also supports object arrays with source URLs:
   }
 ]
 ```
-
