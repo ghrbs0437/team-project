@@ -140,12 +140,17 @@ export default function Dashboard() {
     setErrorMessage('');
 
     try {
+      const endpoint = submittedQuery ? '/crawled-profiles/embedded' : '/crawled-profiles';
+      const params: Record<string, string | number> = {
+        page: nextPage,
+        size: PAGE_SIZE,
+      };
+      if (submittedQuery) {
+        params.context = submittedQuery;
+      }
+
       const data = await fetchJson<CrawledProfilesResponse | RawCrawledProfile[]>(
-        buildUrl('/crawled-profiles', {
-          page: nextPage,
-          size: PAGE_SIZE,
-          q: submittedQuery || undefined,
-        }),
+        buildUrl(endpoint, params),
       );
       const { crawledProfiles, page, total, hasNext } = normalizeProfilesResponse(
         data,
@@ -201,17 +206,6 @@ export default function Dashboard() {
     }
   };
 
-  const displayedProfiles = submittedQuery
-    ? profiles.filter((profile) => {
-        const query = submittedQuery.toLowerCase();
-
-        return (
-          profile.name.toLowerCase().includes(query) ||
-          profile.tags.some((tag) => tag.toLowerCase().includes(query))
-        );
-      })
-    : profiles;
-
   return (
     <div className="min-h-full bg-gray-50 p-8">
       <div className="mx-auto max-w-6xl space-y-6">
@@ -223,7 +217,7 @@ export default function Dashboard() {
                 <h2 className="text-xl font-semibold">연수생 탐색</h2>
               </div>
               <p className="mt-1 text-sm text-[#939598]">
-                관심 분야와 태그를 기준으로 함께할 연수생을 살펴보세요.
+                원하는 요구사항을 입력하면 AI가 가장 적합한 연수생을 찾아줍니다.
               </p>
             </div>
             <form onSubmit={handleSearch} className="flex w-full gap-2 md:w-auto">
@@ -233,7 +227,7 @@ export default function Dashboard() {
                   type="text"
                   value={searchInput}
                   onChange={(event) => setSearchInput(event.target.value)}
-                  placeholder="이름 또는 관심 태그 검색"
+                  placeholder="원하는 연수생의 특징이나 요구사항을 입력해보세요"
                   className="w-full rounded-lg border border-gray-300 py-2 pl-10 pr-4 text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#68BCE9]/30"
                 />
               </div>
@@ -259,10 +253,10 @@ export default function Dashboard() {
               {isLoading && profiles.length === 0
                 ? '연수생 정보를 불러오는 중'
                 : submittedQuery
-                  ? `검색 결과 ${displayedProfiles.length}명 / 총 ${total}명`
+                  ? `검색 결과 ${profiles.length}명 / 총 ${total}명`
                   : `총 ${total}명`}
             </h3>
-            <span className="text-xs text-[#939598]">관심 태그를 기준으로 연수생을 살펴보세요</span>
+            <span className="text-xs text-[#939598]">AI가 분석한 추천 결과를 확인해보세요</span>
           </div>
 
           {errorMessage && (
@@ -281,13 +275,13 @@ export default function Dashboard() {
               </div>
             )}
 
-            {!isLoading && displayedProfiles.length === 0 && (
+            {!isLoading && profiles.length === 0 && (
               <div className="rounded-lg border border-dashed border-gray-300 bg-white p-10 text-center text-sm text-[#939598]">
-                아직 등록된 연수생이 없습니다.
+                검색 결과가 없습니다.
               </div>
             )}
 
-            {displayedProfiles.map((profile) => (
+            {profiles.map((profile) => (
               <article
                 key={profile.id}
                 className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm transition-shadow hover:shadow-md"
@@ -369,7 +363,7 @@ export default function Dashboard() {
                     <div>
                       <div className="mb-1 text-xs font-medium text-[#939598]">원본 링크</div>
                       <a
-                        href={selectedProfile.source_url}
+                        href={'https://www.notion.so'+selectedProfile.source_url}
                         target="_blank"
                         rel="noreferrer"
                         className="inline-flex items-center gap-1 break-all text-[#68BCE9] hover:underline"

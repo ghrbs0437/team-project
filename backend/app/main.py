@@ -3,7 +3,9 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.crawled_profiles.router import router as crawled_profiles_router
 from app.users.router import router as users_router
+from dotenv import load_dotenv
 
+load_dotenv()
 
 app = FastAPI(
     title="Team Project Backend",

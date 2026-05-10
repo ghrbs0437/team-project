@@ -1,3 +1,11 @@
+import math
+import os
+
+try:
+    import google.generativeai as genai
+except ImportError:
+    genai = None
+
 from fastapi import APIRouter, Body, Depends, HTTPException, Query, status
 from sqlalchemy.orm import Session
 
@@ -222,18 +230,52 @@ def search_embedded_crawled_profiles(
     size: int = Query(default=20, ge=1, le=100),
     db: Session = Depends(get_db),
 ) -> CrawledProfileListResponse:
-    # TODO: 임베딩 로직 및 벡터 유사도 측정 로직 추가
-    # 현재는 모델 스키마만 추가된 상태이므로, 전체 리스트를 반환하도록 임시 구현합니다.
+    if genai is None:
+        raise HTTPException(status_code=500, detail="google-generativeai package is not installed.")
+
+    api_key = os.getenv("GEMINI_API_KEY")
+    if not api_key:
+        raise HTTPException(status_code=500, detail="GEMINI_API_KEY is not set.")
+
+    genai.configure(api_key=api_key)
+
+    try:
+        result = genai.embed_content(
+            model="gemini-embedding-001",
+            content=context,
+            task_type="retrieval_query",
+        )
+        query_embedding = result['embedding']
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Failed to generate embedding: {str(e)}"
+        )
+
+    profiles = repository.list_all_crawled_profiles(db)
+    scored_profiles = []
+
+    def cosine_similarity(v1: list[float], v2: list[float]) -> float:
+        dot_product = sum(a * b for a, b in zip(v1, v2))
+        magnitude_v1 = math.sqrt(sum(a * a for a in v1))
+        magnitude_v2 = math.sqrt(sum(b * b for b in v2))
+        if magnitude_v1 == 0 or magnitude_v2 == 0:
+            return 0.0
+        return dot_product / (magnitude_v1 * magnitude_v2)
+
+    for profile in profiles:
+        if profile.embedded_data and isinstance(profile.embedded_data, list):
+            sim = cosine_similarity(query_embedding, profile.embedded_data)
+            scored_profiles.append((sim, profile))
+
+    scored_profiles.sort(key=lambda x: x[0], reverse=True)
+
+    total = len(scored_profiles)
     skip = (page - 1) * size
-    crawled_profiles = repository.list_crawled_profiles(
-        db,
-        skip=skip,
-        limit=size,
-    )
-    total = repository.count_crawled_profiles(db)
+    paginated_profiles = [p[1] for p in scored_profiles[skip:skip + size]]
 
     return CrawledProfileListResponse(
-        crawled_profiles=crawled_profiles,
+        crawled_profiles=paginated_profiles,
         page=page,
         size=size,
         total=total,
