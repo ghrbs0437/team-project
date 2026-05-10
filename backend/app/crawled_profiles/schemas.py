@@ -11,6 +11,7 @@ class CrawledProfileBase(BaseModel):
     title: str
     raw_text: str
     parsed_json: dict[str, Any] | None = None
+    embedded_data: list[float] | None = None
 
 
 class CrawledProfileCreate(CrawledProfileBase):

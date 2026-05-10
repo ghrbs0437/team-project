@@ -215,6 +215,32 @@ def is_duplicate_crawled_profile(
     return existing_profile_by_key is not None
 
 
+@router.get("/embedded", response_model=CrawledProfileListResponse)
+def search_embedded_crawled_profiles(
+    context: str = Query(..., description="Context for vector embedding and similarity search"),
+    page: int = Query(default=1, ge=1),
+    size: int = Query(default=20, ge=1, le=100),
+    db: Session = Depends(get_db),
+) -> CrawledProfileListResponse:
+    # TODO: 임베딩 로직 및 벡터 유사도 측정 로직 추가
+    # 현재는 모델 스키마만 추가된 상태이므로, 전체 리스트를 반환하도록 임시 구현합니다.
+    skip = (page - 1) * size
+    crawled_profiles = repository.list_crawled_profiles(
+        db,
+        skip=skip,
+        limit=size,
+    )
+    total = repository.count_crawled_profiles(db)
+
+    return CrawledProfileListResponse(
+        crawled_profiles=crawled_profiles,
+        page=page,
+        size=size,
+        total=total,
+        has_next=page * size < total,
+    )
+
+
 @router.get("/{profile_id}", response_model=CrawledProfileRead)
 def read_crawled_profile(
     profile_id: int,

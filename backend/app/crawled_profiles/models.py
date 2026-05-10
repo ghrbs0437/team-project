@@ -16,6 +16,7 @@ class CrawledProfile(Base):
     title: Mapped[str] = mapped_column(String(255), nullable=False, index=True)
     raw_text: Mapped[str] = mapped_column(Text, nullable=False)
     parsed_json: Mapped[dict | None] = mapped_column(JSON, nullable=True)
+    embedded_data: Mapped[list[float] | None] = mapped_column(JSON, nullable=True)
     created_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True),
         server_default=func.now(),

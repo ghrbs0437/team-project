@@ -28,6 +28,7 @@ def create_database_tables() -> None:
 
     Base.metadata.create_all(bind=engine)
     ensure_crawled_profiles_source_url_column()
+    ensure_crawled_profiles_embedded_data_column()
     ensure_users_demo_columns()
 
 
@@ -50,6 +51,25 @@ def ensure_crawled_profiles_source_url_column() -> None:
             text("ALTER TABLE crawled_profiles ADD COLUMN source_url VARCHAR(500)")
         )
     ensure_crawled_profiles_source_url_index()
+
+
+def ensure_crawled_profiles_embedded_data_column() -> None:
+    inspector = inspect(engine)
+    table_names = inspector.get_table_names()
+    if "crawled_profiles" not in table_names:
+        return
+
+    column_names = {
+        column["name"]
+        for column in inspector.get_columns("crawled_profiles")
+    }
+    if "embedded_data" in column_names:
+        return
+
+    with engine.begin() as connection:
+        connection.execute(
+            text("ALTER TABLE crawled_profiles ADD COLUMN embedded_data JSON")
+        )
 
 
 def ensure_crawled_profiles_source_url_index() -> None:
