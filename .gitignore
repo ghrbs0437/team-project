@@ -47,3 +47,6 @@ yarn-error.log*
 # Docker / temp
 .temp/
 .tmp/
+
+# Claude Code local settings
+.claude/
