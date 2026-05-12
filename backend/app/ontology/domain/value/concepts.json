@@ -1,0 +1,1487 @@
+{
+  "technology": [
+    {
+      "key": "python",
+      "name": "Python",
+      "aliases": [
+        "파이썬"
+      ],
+      "category": "language",
+      "subcategory": "python",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "java",
+      "name": "Java",
+      "aliases": [
+        "자바"
+      ],
+      "category": "language",
+      "subcategory": "jvm",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "kotlin",
+      "name": "Kotlin",
+      "aliases": [
+        "코틀린"
+      ],
+      "category": "language",
+      "subcategory": "jvm",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "javascript",
+      "name": "JavaScript",
+      "aliases": [
+        "js",
+        "자바스크립트"
+      ],
+      "category": "language",
+      "subcategory": "js",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "typescript",
+      "name": "TypeScript",
+      "aliases": [
+        "ts",
+        "타입스크립트"
+      ],
+      "category": "language",
+      "subcategory": "js",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "go",
+      "name": "Go",
+      "aliases": [
+        "golang",
+        "고언어"
+      ],
+      "category": "language",
+      "subcategory": "go",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "rust",
+      "name": "Rust",
+      "aliases": [
+        "러스트"
+      ],
+      "category": "language",
+      "subcategory": "rust",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "cpp",
+      "name": "C++",
+      "aliases": [
+        "c++",
+        "c plus plus"
+      ],
+      "category": "language",
+      "subcategory": "cpp",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "csharp",
+      "name": "C#",
+      "aliases": [
+        "c#",
+        "c sharp",
+        "씨샵"
+      ],
+      "category": "language",
+      "subcategory": "dotnet",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "dart",
+      "name": "Dart",
+      "aliases": [
+        "다트"
+      ],
+      "category": "language",
+      "subcategory": "dart",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "swift",
+      "name": "Swift",
+      "aliases": [
+        "스위프트"
+      ],
+      "category": "language",
+      "subcategory": "apple",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "nodejs",
+      "name": "Node.js",
+      "aliases": [
+        "node.js",
+        "node js",
+        "노드"
+      ],
+      "category": "platform",
+      "subcategory": "js",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "spring_boot",
+      "name": "Spring Boot",
+      "aliases": [
+        "spring boot",
+        "스프링부트",
+        "springboot"
+      ],
+      "category": "backend_framework",
+      "subcategory": "jvm",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "spring",
+      "name": "Spring",
+      "aliases": [
+        "스프링",
+        "spring framework"
+      ],
+      "category": "backend_framework",
+      "subcategory": "jvm",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "fastapi",
+      "name": "FastAPI",
+      "aliases": [
+        "fast api"
+      ],
+      "category": "backend_framework",
+      "subcategory": "python",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "django",
+      "name": "Django",
+      "aliases": [
+        "장고"
+      ],
+      "category": "backend_framework",
+      "subcategory": "python",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "flask",
+      "name": "Flask",
+      "aliases": [
+        "플라스크"
+      ],
+      "category": "backend_framework",
+      "subcategory": "python",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "express",
+      "name": "Express",
+      "aliases": [
+        "express.js",
+        "expressjs"
+      ],
+      "category": "backend_framework",
+      "subcategory": "js",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "nestjs",
+      "name": "NestJS",
+      "aliases": [
+        "nest js",
+        "nest.js"
+      ],
+      "category": "backend_framework",
+      "subcategory": "js",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "gin",
+      "name": "Gin",
+      "aliases": [
+        "gin framework"
+      ],
+      "category": "backend_framework",
+      "subcategory": "go",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "react",
+      "name": "React",
+      "aliases": [
+        "리액트",
+        "react.js",
+        "reactjs"
+      ],
+      "category": "frontend_framework",
+      "subcategory": "js",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "nextjs",
+      "name": "Next.js",
+      "aliases": [
+        "next.js",
+        "next js",
+        "넥스트"
+      ],
+      "category": "frontend_framework",
+      "subcategory": "js",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "vue",
+      "name": "Vue",
+      "aliases": [
+        "vue.js",
+        "vuejs",
+        "뷰"
+      ],
+      "category": "frontend_framework",
+      "subcategory": "js",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "nuxt",
+      "name": "Nuxt",
+      "aliases": [
+        "nuxt.js",
+        "넥스트js",
+        "뉴엑스트"
+      ],
+      "category": "frontend_framework",
+      "subcategory": "js",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "angular",
+      "name": "Angular",
+      "aliases": [
+        "앵귤러"
+      ],
+      "category": "frontend_framework",
+      "subcategory": "js",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "svelte",
+      "name": "Svelte",
+      "aliases": [
+        "스벨트"
+      ],
+      "category": "frontend_framework",
+      "subcategory": "js",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "flutter",
+      "name": "Flutter",
+      "aliases": [
+        "플러터"
+      ],
+      "category": "mobile_framework",
+      "subcategory": "dart",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "react_native",
+      "name": "React Native",
+      "aliases": [
+        "react native",
+        "react-native",
+        "rn",
+        "리액트 네이티브"
+      ],
+      "category": "mobile_framework",
+      "subcategory": "js",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "swiftui",
+      "name": "SwiftUI",
+      "aliases": [
+        "swift ui",
+        "스위프트ui"
+      ],
+      "category": "mobile_framework",
+      "subcategory": "apple",
+      "license": "proprietary",
+      "is_open_source": false
+    },
+    {
+      "key": "jetpack_compose",
+      "name": "Jetpack Compose",
+      "aliases": [
+        "jetpack",
+        "compose",
+        "젯팩",
+        "젯팩 컴포즈"
+      ],
+      "category": "mobile_framework",
+      "subcategory": "jvm",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "pytorch",
+      "name": "PyTorch",
+      "aliases": [
+        "파이토치",
+        "torch"
+      ],
+      "category": "ai_ml_framework",
+      "subcategory": "python",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "tensorflow",
+      "name": "TensorFlow",
+      "aliases": [
+        "텐서플로",
+        "tf"
+      ],
+      "category": "ai_ml_framework",
+      "subcategory": "python",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "huggingface",
+      "name": "Hugging Face",
+      "aliases": [
+        "hugging face",
+        "transformers",
+        "허깅페이스"
+      ],
+      "category": "ai_ml_framework",
+      "subcategory": "python",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "scikit_learn",
+      "name": "scikit-learn",
+      "aliases": [
+        "scikit-learn",
+        "sklearn",
+        "scikit learn"
+      ],
+      "category": "ai_ml_framework",
+      "subcategory": "python",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "langchain",
+      "name": "LangChain",
+      "aliases": [
+        "랭체인"
+      ],
+      "category": "ai_ml_framework",
+      "subcategory": "python",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "langgraph",
+      "name": "LangGraph",
+      "aliases": [
+        "랭그래프"
+      ],
+      "category": "ai_ml_framework",
+      "subcategory": "python",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "llamaindex",
+      "name": "LlamaIndex",
+      "aliases": [
+        "llama index",
+        "llama-index",
+        "라마인덱스"
+      ],
+      "category": "ai_ml_framework",
+      "subcategory": "python",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "openai",
+      "name": "OpenAI",
+      "aliases": [
+        "openai api",
+        "openai sdk",
+        "chatgpt api"
+      ],
+      "category": "ai_ml_framework",
+      "subcategory": "python",
+      "license": "proprietary",
+      "is_open_source": false
+    },
+    {
+      "key": "rag",
+      "name": "RAG",
+      "aliases": [
+        "retrieval augmented generation",
+        "검색 증강 생성"
+      ],
+      "category": "ai_technique",
+      "subcategory": "ai"
+    },
+    {
+      "key": "fine_tuning",
+      "name": "Fine-tuning",
+      "aliases": [
+        "fine-tuning",
+        "파인튜닝",
+        "finetuning"
+      ],
+      "category": "ai_technique",
+      "subcategory": "ai"
+    },
+    {
+      "key": "prompt_engineering",
+      "name": "프롬프트 엔지니어링",
+      "aliases": [
+        "prompt engineering"
+      ],
+      "category": "ai_technique",
+      "subcategory": "ai"
+    },
+    {
+      "key": "embedding",
+      "name": "임베딩",
+      "aliases": [
+        "embeddings",
+        "벡터 임베딩"
+      ],
+      "category": "ai_technique",
+      "subcategory": "ai"
+    },
+    {
+      "key": "llm_serving",
+      "name": "LLM 서빙",
+      "aliases": [
+        "vllm",
+        "llm serving",
+        "모델 서빙",
+        "ollama"
+      ],
+      "category": "ai_technique",
+      "subcategory": "ai"
+    },
+    {
+      "key": "agent",
+      "name": "AI 에이전트",
+      "aliases": [
+        "ai agent",
+        "에이전트",
+        "agentic"
+      ],
+      "category": "ai_technique",
+      "subcategory": "ai"
+    },
+    {
+      "key": "unity",
+      "name": "Unity",
+      "aliases": [
+        "유니티"
+      ],
+      "category": "game_engine",
+      "subcategory": "game",
+      "license": "proprietary",
+      "is_open_source": false
+    },
+    {
+      "key": "unreal_engine",
+      "name": "Unreal Engine",
+      "aliases": [
+        "언리얼",
+        "ue5",
+        "ue4",
+        "unreal"
+      ],
+      "category": "game_engine",
+      "subcategory": "game",
+      "license": "proprietary",
+      "is_open_source": false
+    },
+    {
+      "key": "postgresql",
+      "name": "PostgreSQL",
+      "aliases": [
+        "postgres",
+        "포스트그레스"
+      ],
+      "category": "database_relational",
+      "subcategory": "db",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "mysql",
+      "name": "MySQL",
+      "aliases": [
+        "마이에스큐엘"
+      ],
+      "category": "database_relational",
+      "subcategory": "db",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "mariadb",
+      "name": "MariaDB",
+      "aliases": [
+        "마리아디비"
+      ],
+      "category": "database_relational",
+      "subcategory": "db",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "mongodb",
+      "name": "MongoDB",
+      "aliases": [
+        "몽고디비",
+        "mongo"
+      ],
+      "category": "database_nosql",
+      "subcategory": "db",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "dynamodb",
+      "name": "DynamoDB",
+      "aliases": [
+        "다이나모디비"
+      ],
+      "category": "database_nosql",
+      "subcategory": "db",
+      "license": "proprietary",
+      "is_open_source": false
+    },
+    {
+      "key": "redis",
+      "name": "Redis",
+      "aliases": [
+        "레디스"
+      ],
+      "category": "database_cache",
+      "subcategory": "db",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "elasticsearch",
+      "name": "Elasticsearch",
+      "aliases": [
+        "elastic",
+        "es",
+        "엘라스틱",
+        "엘라스틱서치"
+      ],
+      "category": "database_search",
+      "subcategory": "db",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "pgvector",
+      "name": "pgvector",
+      "aliases": [
+        "pg vector"
+      ],
+      "category": "database_vector",
+      "subcategory": "db",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "pinecone",
+      "name": "Pinecone",
+      "aliases": [
+        "파인콘"
+      ],
+      "category": "database_vector",
+      "subcategory": "db",
+      "license": "proprietary",
+      "is_open_source": false
+    },
+    {
+      "key": "faiss",
+      "name": "FAISS",
+      "category": "database_vector",
+      "subcategory": "python",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "chromadb",
+      "name": "ChromaDB",
+      "aliases": [
+        "chroma"
+      ],
+      "category": "database_vector",
+      "subcategory": "python",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "weaviate",
+      "name": "Weaviate",
+      "aliases": [
+        "위비에이트"
+      ],
+      "category": "database_vector",
+      "subcategory": "db",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "qdrant",
+      "name": "Qdrant",
+      "aliases": [
+        "큐드란트"
+      ],
+      "category": "database_vector",
+      "subcategory": "db",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "docker",
+      "name": "Docker",
+      "aliases": [
+        "도커",
+        "docker-compose",
+        "docker compose"
+      ],
+      "category": "devops",
+      "subcategory": "devops",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "kubernetes",
+      "name": "Kubernetes",
+      "aliases": [
+        "k8s",
+        "쿠버네티스"
+      ],
+      "category": "devops",
+      "subcategory": "devops",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "nginx",
+      "name": "Nginx",
+      "aliases": [
+        "엔진엑스"
+      ],
+      "category": "devops",
+      "subcategory": "devops",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "github_actions",
+      "name": "GitHub Actions",
+      "aliases": [
+        "github action",
+        "gha"
+      ],
+      "category": "devops",
+      "subcategory": "devops",
+      "license": "proprietary",
+      "is_open_source": false
+    },
+    {
+      "key": "terraform",
+      "name": "Terraform",
+      "aliases": [
+        "테라폼"
+      ],
+      "category": "devops",
+      "subcategory": "devops",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "aws",
+      "name": "AWS",
+      "aliases": [
+        "amazon web services",
+        "아마존 웹 서비스"
+      ],
+      "category": "devops",
+      "subcategory": "devops",
+      "license": "proprietary",
+      "is_open_source": false
+    },
+    {
+      "key": "gcp",
+      "name": "GCP",
+      "aliases": [
+        "google cloud",
+        "구글 클라우드",
+        "google cloud platform"
+      ],
+      "category": "devops",
+      "subcategory": "devops",
+      "license": "proprietary",
+      "is_open_source": false
+    },
+    {
+      "key": "azure",
+      "name": "Azure",
+      "aliases": [
+        "마이크로소프트 애저",
+        "microsoft azure"
+      ],
+      "category": "devops",
+      "subcategory": "devops",
+      "license": "proprietary",
+      "is_open_source": false
+    },
+    {
+      "key": "kafka",
+      "name": "Kafka",
+      "aliases": [
+        "아파치 카프카",
+        "apache kafka"
+      ],
+      "category": "message_queue",
+      "subcategory": "devops",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "rabbitmq",
+      "name": "RabbitMQ",
+      "aliases": [
+        "rabbit mq",
+        "래빗엠큐"
+      ],
+      "category": "message_queue",
+      "subcategory": "devops",
+      "license": "open_source",
+      "is_open_source": true
+    }
+  ],
+  "skill": [
+    {
+      "key": "api_design",
+      "name": "API 설계",
+      "aliases": [
+        "api design",
+        "restful api",
+        "api 설계"
+      ],
+      "difficulty": "medium",
+      "skill_type": "technical"
+    },
+    {
+      "key": "system_design",
+      "name": "시스템 설계",
+      "aliases": [
+        "system design",
+        "아키텍처 설계",
+        "architecture design"
+      ],
+      "difficulty": "hard",
+      "skill_type": "technical"
+    },
+    {
+      "key": "troubleshooting",
+      "name": "트러블슈팅",
+      "aliases": [
+        "troubleshooting",
+        "디버깅",
+        "debugging"
+      ],
+      "difficulty": "medium",
+      "skill_type": "technical"
+    },
+    {
+      "key": "team_leading",
+      "name": "팀 리딩",
+      "aliases": [
+        "team leading",
+        "리드",
+        "tech lead",
+        "테크리드"
+      ],
+      "difficulty": "hard",
+      "skill_type": "soft"
+    },
+    {
+      "key": "code_review",
+      "name": "코드 리뷰",
+      "aliases": [
+        "code review",
+        "코드리뷰"
+      ],
+      "difficulty": "medium",
+      "skill_type": "cross_cutting"
+    }
+  ],
+  "role": [
+    {
+      "key": "backend",
+      "name": "백엔드 개발자",
+      "aliases": [
+        "백엔드",
+        "be",
+        "backend engineer",
+        "서버",
+        "server"
+      ],
+      "typical_seniority": [
+        "junior",
+        "mid",
+        "senior",
+        "lead"
+      ]
+    },
+    {
+      "key": "frontend",
+      "name": "프론트엔드 개발자",
+      "aliases": [
+        "프론트엔드",
+        "fe",
+        "frontend engineer",
+        "ui/ux"
+      ],
+      "typical_seniority": [
+        "junior",
+        "mid",
+        "senior",
+        "lead"
+      ]
+    },
+    {
+      "key": "fullstack",
+      "name": "풀스택 개발자",
+      "aliases": [
+        "풀스택",
+        "full-stack",
+        "full stack",
+        "fs"
+      ],
+      "typical_seniority": [
+        "junior",
+        "mid",
+        "senior",
+        "lead"
+      ]
+    },
+    {
+      "key": "ai_ml",
+      "name": "AI/ML 개발자",
+      "aliases": [
+        "ai",
+        "ml",
+        "ai engineer",
+        "ml engineer",
+        "ai/ml",
+        "data scientist",
+        "llm engineer",
+        "ai 개발자",
+        "머신러닝"
+      ],
+      "typical_seniority": [
+        "junior",
+        "mid",
+        "senior",
+        "lead"
+      ]
+    },
+    {
+      "key": "devops",
+      "name": "DevOps 엔지니어",
+      "aliases": [
+        "devops",
+        "인프라",
+        "infra",
+        "sre",
+        "클라우드 엔지니어"
+      ],
+      "typical_seniority": [
+        "mid",
+        "senior",
+        "lead"
+      ]
+    },
+    {
+      "key": "mobile",
+      "name": "모바일 개발자",
+      "aliases": [
+        "모바일",
+        "앱 개발",
+        "app developer",
+        "앱개발자"
+      ],
+      "typical_seniority": [
+        "junior",
+        "mid",
+        "senior"
+      ]
+    },
+    {
+      "key": "pm",
+      "name": "PM/기획자",
+      "aliases": [
+        "기획",
+        "프로덕트 매니저",
+        "product manager",
+        "po",
+        "기획자"
+      ],
+      "typical_seniority": [
+        "junior",
+        "mid",
+        "senior",
+        "lead"
+      ]
+    },
+    {
+      "key": "data",
+      "name": "데이터 엔지니어",
+      "aliases": [
+        "데이터",
+        "data engineer",
+        "데이터 분석",
+        "data analyst",
+        "데이터 파이프라인"
+      ],
+      "typical_seniority": [
+        "junior",
+        "mid",
+        "senior"
+      ]
+    },
+    {
+      "key": "game",
+      "name": "게임 개발자",
+      "aliases": [
+        "게임 개발",
+        "game developer",
+        "game dev"
+      ],
+      "typical_seniority": [
+        "junior",
+        "mid",
+        "senior"
+      ]
+    },
+    {
+      "key": "security",
+      "name": "보안 엔지니어",
+      "aliases": [
+        "security engineer",
+        "정보보안 엔지니어"
+      ],
+      "typical_seniority": [
+        "mid",
+        "senior",
+        "lead"
+      ]
+    }
+  ],
+  "goal": [
+    {
+      "key": "employment",
+      "name": "취업",
+      "aliases": [
+        "취직",
+        "career",
+        "취업 준비",
+        "취준"
+      ],
+      "goal_category": "career"
+    },
+    {
+      "key": "startup",
+      "name": "창업",
+      "aliases": [
+        "스타트업",
+        "사업",
+        "창업가"
+      ],
+      "goal_category": "business"
+    },
+    {
+      "key": "excellence",
+      "name": "우수자 인증",
+      "aliases": [
+        "우수",
+        "우수자",
+        "해외 연수"
+      ],
+      "goal_category": "recognition"
+    },
+    {
+      "key": "monetization",
+      "name": "수익화",
+      "aliases": [
+        "수익",
+        "revenue",
+        "monetize"
+      ],
+      "goal_category": "financial"
+    },
+    {
+      "key": "portfolio",
+      "name": "포트폴리오",
+      "aliases": [
+        "포폴"
+      ],
+      "goal_category": "career"
+    }
+  ],
+  "domain": [
+    {
+      "key": "finance_domain",
+      "name": "금융/핀테크",
+      "aliases": [
+        "finance",
+        "금융",
+        "핀테크",
+        "fintech",
+        "투자",
+        "payment",
+        "페이먼트",
+        "증권",
+        "보험"
+      ],
+      "industry_sector": "finance"
+    },
+    {
+      "key": "healthcare_domain",
+      "name": "의료/헬스케어",
+      "aliases": [
+        "healthcare",
+        "의료",
+        "헬스케어",
+        "health",
+        "병원",
+        "바이오"
+      ],
+      "industry_sector": "healthcare"
+    },
+    {
+      "key": "education_domain",
+      "name": "교육/에듀테크",
+      "aliases": [
+        "education",
+        "교육",
+        "에듀테크",
+        "edtech",
+        "학습"
+      ],
+      "industry_sector": "education"
+    },
+    {
+      "key": "cybersecurity_domain",
+      "name": "보안",
+      "aliases": [
+        "cybersecurity",
+        "보안",
+        "정보보안",
+        "해킹"
+      ],
+      "industry_sector": "tech"
+    },
+    {
+      "key": "gaming_domain",
+      "name": "게임",
+      "aliases": [
+        "gaming",
+        "게임 산업",
+        "게임 도메인",
+        "게임 서비스"
+      ],
+      "industry_sector": "entertainment"
+    },
+    {
+      "key": "entertainment_domain",
+      "name": "미디어/엔터",
+      "aliases": [
+        "entertainment",
+        "미디어",
+        "ott",
+        "콘텐츠",
+        "엔터테인먼트",
+        "음악",
+        "영상"
+      ],
+      "industry_sector": "entertainment"
+    },
+    {
+      "key": "social_domain",
+      "name": "소셜/커뮤니티",
+      "aliases": [
+        "social",
+        "소셜",
+        "커뮤니티",
+        "sns"
+      ],
+      "industry_sector": "other"
+    },
+    {
+      "key": "ecommerce_domain",
+      "name": "이커머스",
+      "aliases": [
+        "ecommerce",
+        "이커머스",
+        "쇼핑",
+        "커머스",
+        "e-commerce"
+      ],
+      "industry_sector": "retail"
+    },
+    {
+      "key": "food_domain",
+      "name": "푸드/배달",
+      "aliases": [
+        "food",
+        "음식",
+        "식당",
+        "요식업",
+        "배달"
+      ],
+      "industry_sector": "retail"
+    },
+    {
+      "key": "mobility_domain",
+      "name": "모빌리티",
+      "aliases": [
+        "mobility",
+        "모빌리티",
+        "교통",
+        "자동차",
+        "자율주행"
+      ],
+      "industry_sector": "infrastructure"
+    },
+    {
+      "key": "ai_research_domain",
+      "name": "AI/연구",
+      "aliases": [
+        "ai_research",
+        "ai 연구",
+        "nlp",
+        "cv",
+        "검색",
+        "추천",
+        "recommendation"
+      ],
+      "industry_sector": "tech"
+    },
+    {
+      "key": "infra_devops_domain",
+      "name": "인프라/DevOps",
+      "aliases": [
+        "infra_devops",
+        "인프라 도메인",
+        "devops 도메인",
+        "클라우드 인프라"
+      ],
+      "industry_sector": "infrastructure"
+    },
+    {
+      "key": "blockchain_domain",
+      "name": "블록체인/Web3",
+      "aliases": [
+        "blockchain",
+        "블록체인",
+        "web3",
+        "nft",
+        "defi",
+        "크립토",
+        "crypto"
+      ],
+      "industry_sector": "tech"
+    }
+  ],
+  "availability": [
+    {
+      "key": "fulltime",
+      "name": "풀타임",
+      "aliases": [
+        "full-time",
+        "전념",
+        "올인",
+        "상시"
+      ],
+      "hours_per_week_min": 40
+    },
+    {
+      "key": "partial",
+      "name": "재학 중",
+      "aliases": [
+        "재학",
+        "수업",
+        "학기 중",
+        "평일"
+      ],
+      "hours_per_week_min": 10,
+      "hours_per_week_max": 25
+    },
+    {
+      "key": "leave_of_absence",
+      "name": "휴학 중",
+      "aliases": [
+        "휴학",
+        "휴학예정"
+      ],
+      "hours_per_week_min": 20,
+      "hours_per_week_max": 40
+    },
+    {
+      "key": "graduated",
+      "name": "졸업",
+      "aliases": [
+        "졸업유예",
+        "졸업 예정",
+        "수료"
+      ],
+      "hours_per_week_min": 40
+    },
+    {
+      "key": "military",
+      "name": "군 복무",
+      "aliases": [
+        "현역",
+        "군복무 중",
+        "전역 예정",
+        "군 복무 예정",
+        "입대 예정"
+      ],
+      "hours_per_week_min": 0,
+      "hours_per_week_max": 5
+    }
+  ],
+  "work_style": [
+    {
+      "key": "in_person",
+      "name": "대면 선호",
+      "aliases": [
+        "대면",
+        "오프라인",
+        "센터",
+        "직접 만나"
+      ],
+      "is_remote": false
+    },
+    {
+      "key": "remote",
+      "name": "원격 선호",
+      "aliases": [
+        "비대면",
+        "온라인",
+        "원격",
+        "재택",
+        "remote work"
+      ],
+      "is_remote": true
+    },
+    {
+      "key": "hybrid",
+      "name": "혼합",
+      "aliases": [
+        "온오프라인",
+        "상황에 따라"
+      ]
+    }
+  ],
+  "experience_type": [
+    {
+      "key": "project_experience",
+      "name": "프로젝트 경험",
+      "aliases": [
+        "프로젝트",
+        "팀 프로젝트",
+        "개인 프로젝트"
+      ],
+      "is_professional": false
+    },
+    {
+      "key": "internship_experience",
+      "name": "인턴 경험",
+      "aliases": [
+        "인턴",
+        "인턴십",
+        "internship"
+      ],
+      "is_professional": true
+    },
+    {
+      "key": "company_experience",
+      "name": "회사 경험",
+      "aliases": [
+        "회사",
+        "직장",
+        "재직",
+        "경력"
+      ],
+      "is_professional": true
+    },
+    {
+      "key": "production_experience",
+      "name": "실서비스 경험",
+      "aliases": [
+        "실서비스",
+        "운영 경험",
+        "production"
+      ],
+      "is_professional": true
+    }
+  ],
+  "education": [
+    {
+      "key": "bootcamp",
+      "name": "부트캠프",
+      "aliases": [
+        "코딩 부트캠프",
+        "bootcamp"
+      ],
+      "credential_level": "certificate",
+      "duration_months": 6
+    },
+    {
+      "key": "cs_degree",
+      "name": "컴퓨터공학 전공",
+      "aliases": [
+        "컴공",
+        "cs",
+        "전공",
+        "sw전공"
+      ],
+      "credential_level": "undergraduate",
+      "duration_months": 48
+    },
+    {
+      "key": "self_taught",
+      "name": "독학",
+      "aliases": [
+        "self-taught",
+        "자기학습"
+      ]
+    }
+  ],
+  "certification": [
+    {
+      "key": "information_processing_engineer",
+      "name": "정보처리기사",
+      "aliases": [
+        "정처기"
+      ],
+      "issuing_org": "한국산업인력공단"
+    },
+    {
+      "key": "aws_certification",
+      "name": "AWS 자격증",
+      "aliases": [
+        "aws cert",
+        "aws saa",
+        "aws solutions architect"
+      ],
+      "issuing_org": "Amazon",
+      "validity_years": 3
+    },
+    {
+      "key": "gcp_certification",
+      "name": "GCP 자격증",
+      "aliases": [
+        "gcp cert"
+      ],
+      "issuing_org": "Google",
+      "validity_years": 2
+    },
+    {
+      "key": "azure_certification",
+      "name": "Azure 자격증",
+      "aliases": [
+        "azure cert",
+        "az-900",
+        "az-204"
+      ],
+      "issuing_org": "Microsoft",
+      "validity_years": 2
+    }
+  ],
+  "location": [
+    {
+      "key": "seoul",
+      "name": "서울",
+      "aliases": [
+        "강남",
+        "마포",
+        "서울 전체"
+      ],
+      "region": "capital"
+    },
+    {
+      "key": "pangyo",
+      "name": "판교",
+      "aliases": [
+        "성남",
+        "분당"
+      ],
+      "region": "metropolitan"
+    },
+    {
+      "key": "gyeonggi",
+      "name": "경기도",
+      "aliases": [
+        "경기",
+        "수원",
+        "안양"
+      ],
+      "region": "metropolitan"
+    }
+  ]
+}

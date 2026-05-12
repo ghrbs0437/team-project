@@ -1,0 +1,345 @@
+{
+  "uses": [
+    {
+      "source": "spring_boot",
+      "target": "java"
+    },
+    {
+      "source": "spring_boot",
+      "target": "spring"
+    },
+    {
+      "source": "spring",
+      "target": "java"
+    },
+    {
+      "source": "kotlin",
+      "target": "java"
+    },
+    {
+      "source": "fastapi",
+      "target": "python"
+    },
+    {
+      "source": "django",
+      "target": "python"
+    },
+    {
+      "source": "flask",
+      "target": "python"
+    },
+    {
+      "source": "pytorch",
+      "target": "python"
+    },
+    {
+      "source": "tensorflow",
+      "target": "python"
+    },
+    {
+      "source": "huggingface",
+      "target": "python"
+    },
+    {
+      "source": "scikit_learn",
+      "target": "python"
+    },
+    {
+      "source": "langchain",
+      "target": "python"
+    },
+    {
+      "source": "langgraph",
+      "target": "python"
+    },
+    {
+      "source": "react",
+      "target": "javascript"
+    },
+    {
+      "source": "nextjs",
+      "target": "react"
+    },
+    {
+      "source": "nextjs",
+      "target": "javascript"
+    },
+    {
+      "source": "vue",
+      "target": "javascript"
+    },
+    {
+      "source": "angular",
+      "target": "typescript"
+    },
+    {
+      "source": "svelte",
+      "target": "javascript"
+    },
+    {
+      "source": "nestjs",
+      "target": "typescript"
+    },
+    {
+      "source": "nestjs",
+      "target": "nodejs"
+    },
+    {
+      "source": "express",
+      "target": "nodejs"
+    },
+    {
+      "source": "react_native",
+      "target": "react"
+    },
+    {
+      "source": "react_native",
+      "target": "javascript"
+    },
+    {
+      "source": "gin",
+      "target": "go"
+    },
+    {
+      "source": "flutter",
+      "target": "dart"
+    },
+    {
+      "source": "typescript",
+      "target": "javascript"
+    }
+  ],
+  "requires": [
+    {
+      "source": "langchain",
+      "target": "python"
+    },
+    {
+      "source": "langgraph",
+      "target": "langchain"
+    },
+    {
+      "source": "rag",
+      "target": "embedding"
+    },
+    {
+      "source": "fine_tuning",
+      "target": "pytorch",
+      "weight": 0.7
+    },
+    {
+      "source": "fine_tuning",
+      "target": "tensorflow",
+      "weight": 0.7
+    },
+    {
+      "source": "agent",
+      "target": "langchain",
+      "weight": 0.5
+    },
+    {
+      "source": "agent",
+      "target": "prompt_engineering"
+    },
+    {
+      "source": "kubernetes",
+      "target": "docker"
+    },
+    {
+      "source": "llm_serving",
+      "target": "python",
+      "weight": 0.8
+    },
+    {
+      "source": "rag",
+      "target": "python",
+      "weight": 0.7
+    }
+  ],
+  "related_to": [
+    {
+      "source": "react",
+      "target": "vue",
+      "category": "competing"
+    },
+    {
+      "source": "react",
+      "target": "angular",
+      "category": "competing"
+    },
+    {
+      "source": "react",
+      "target": "svelte",
+      "category": "competing"
+    },
+    {
+      "source": "vue",
+      "target": "angular",
+      "category": "competing"
+    },
+    {
+      "source": "vue",
+      "target": "svelte",
+      "category": "competing"
+    },
+    {
+      "source": "fastapi",
+      "target": "django",
+      "category": "competing"
+    },
+    {
+      "source": "fastapi",
+      "target": "flask",
+      "category": "competing"
+    },
+    {
+      "source": "django",
+      "target": "flask",
+      "category": "competing"
+    },
+    {
+      "source": "spring_boot",
+      "target": "spring",
+      "category": "ecosystem"
+    },
+    {
+      "source": "nestjs",
+      "target": "express",
+      "category": "competing"
+    },
+    {
+      "source": "java",
+      "target": "kotlin",
+      "category": "similar_language"
+    },
+    {
+      "source": "javascript",
+      "target": "typescript",
+      "category": "similar_language"
+    },
+    {
+      "source": "python",
+      "target": "go",
+      "weight": 0.4,
+      "category": "similar_language"
+    },
+    {
+      "source": "java",
+      "target": "go",
+      "weight": 0.4,
+      "category": "similar_language"
+    },
+    {
+      "source": "pytorch",
+      "target": "tensorflow",
+      "category": "competing"
+    },
+    {
+      "source": "langchain",
+      "target": "langgraph",
+      "category": "ecosystem"
+    },
+    {
+      "source": "rag",
+      "target": "embedding",
+      "category": "ecosystem"
+    },
+    {
+      "source": "rag",
+      "target": "agent",
+      "weight": 0.6,
+      "category": "ecosystem"
+    },
+    {
+      "source": "llm_serving",
+      "target": "rag",
+      "weight": 0.5,
+      "category": "ecosystem"
+    },
+    {
+      "source": "postgresql",
+      "target": "mysql",
+      "category": "competing"
+    },
+    {
+      "source": "mysql",
+      "target": "mariadb",
+      "category": "competing"
+    },
+    {
+      "source": "mongodb",
+      "target": "dynamodb",
+      "weight": 0.6,
+      "category": "competing"
+    },
+    {
+      "source": "pgvector",
+      "target": "pinecone",
+      "weight": 0.7,
+      "category": "competing"
+    },
+    {
+      "source": "pinecone",
+      "target": "chromadb",
+      "weight": 0.8,
+      "category": "competing"
+    },
+    {
+      "source": "faiss",
+      "target": "chromadb",
+      "weight": 0.7,
+      "category": "competing"
+    },
+    {
+      "source": "kafka",
+      "target": "rabbitmq",
+      "weight": 0.7,
+      "category": "competing"
+    },
+    {
+      "source": "docker",
+      "target": "kubernetes",
+      "weight": 0.8,
+      "category": "ecosystem"
+    },
+    {
+      "source": "aws",
+      "target": "gcp",
+      "weight": 0.5,
+      "category": "competing"
+    },
+    {
+      "source": "aws",
+      "target": "azure",
+      "weight": 0.5,
+      "category": "competing"
+    },
+    {
+      "source": "backend",
+      "target": "fullstack",
+      "category": "related_role"
+    },
+    {
+      "source": "frontend",
+      "target": "fullstack",
+      "category": "related_role"
+    },
+    {
+      "source": "ai_ml",
+      "target": "data",
+      "category": "related_role"
+    },
+    {
+      "source": "backend",
+      "target": "devops",
+      "weight": 0.6,
+      "category": "related_role"
+    },
+    {
+      "source": "data",
+      "target": "devops",
+      "weight": 0.5,
+      "category": "related_role"
+    }
+  ]
+}
