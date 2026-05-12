@@ -1,0 +1,3271 @@
+{
+  "technology": [
+    {
+      "key": "python",
+      "name": "Python",
+      "aliases": [
+        "파이썬"
+      ],
+      "category": "language",
+      "subcategory": "python",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "java",
+      "name": "Java",
+      "aliases": [
+        "자바"
+      ],
+      "category": "language",
+      "subcategory": "jvm",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "kotlin",
+      "name": "Kotlin",
+      "aliases": [
+        "코틀린"
+      ],
+      "category": "language",
+      "subcategory": "jvm",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "javascript",
+      "name": "JavaScript",
+      "aliases": [
+        "js",
+        "자바스크립트"
+      ],
+      "category": "language",
+      "subcategory": "js",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "typescript",
+      "name": "TypeScript",
+      "aliases": [
+        "ts",
+        "타입스크립트"
+      ],
+      "category": "language",
+      "subcategory": "js",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "go",
+      "name": "Go",
+      "aliases": [
+        "golang",
+        "고언어"
+      ],
+      "category": "language",
+      "subcategory": "go",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "rust",
+      "name": "Rust",
+      "aliases": [
+        "러스트"
+      ],
+      "category": "language",
+      "subcategory": "rust",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "cpp",
+      "name": "C++",
+      "aliases": [
+        "c++",
+        "c plus plus"
+      ],
+      "category": "language",
+      "subcategory": "cpp",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "csharp",
+      "name": "C#",
+      "aliases": [
+        "c#",
+        "c sharp",
+        "씨샵"
+      ],
+      "category": "language",
+      "subcategory": "dotnet",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "dart",
+      "name": "Dart",
+      "aliases": [
+        "다트"
+      ],
+      "category": "language",
+      "subcategory": "dart",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "swift",
+      "name": "Swift",
+      "aliases": [
+        "스위프트"
+      ],
+      "category": "language",
+      "subcategory": "apple",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "nodejs",
+      "name": "Node.js",
+      "aliases": [
+        "node.js",
+        "node js",
+        "노드"
+      ],
+      "category": "platform",
+      "subcategory": "js",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "spring_boot",
+      "name": "Spring Boot",
+      "aliases": [
+        "spring boot",
+        "스프링부트",
+        "springboot"
+      ],
+      "category": "backend_framework",
+      "subcategory": "jvm",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "spring",
+      "name": "Spring",
+      "aliases": [
+        "스프링",
+        "spring framework"
+      ],
+      "category": "backend_framework",
+      "subcategory": "jvm",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "fastapi",
+      "name": "FastAPI",
+      "aliases": [
+        "fast api"
+      ],
+      "category": "backend_framework",
+      "subcategory": "python",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "django",
+      "name": "Django",
+      "aliases": [
+        "장고"
+      ],
+      "category": "backend_framework",
+      "subcategory": "python",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "flask",
+      "name": "Flask",
+      "aliases": [
+        "플라스크"
+      ],
+      "category": "backend_framework",
+      "subcategory": "python",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "express",
+      "name": "Express",
+      "aliases": [
+        "express.js",
+        "expressjs"
+      ],
+      "category": "backend_framework",
+      "subcategory": "js",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "nestjs",
+      "name": "NestJS",
+      "aliases": [
+        "nest js",
+        "nest.js"
+      ],
+      "category": "backend_framework",
+      "subcategory": "js",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "gin",
+      "name": "Gin",
+      "aliases": [
+        "gin framework"
+      ],
+      "category": "backend_framework",
+      "subcategory": "go",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "react",
+      "name": "React",
+      "aliases": [
+        "리액트",
+        "react.js",
+        "reactjs"
+      ],
+      "category": "frontend_framework",
+      "subcategory": "js",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "nextjs",
+      "name": "Next.js",
+      "aliases": [
+        "next.js",
+        "next js",
+        "넥스트"
+      ],
+      "category": "frontend_framework",
+      "subcategory": "js",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "vue",
+      "name": "Vue",
+      "aliases": [
+        "vue.js",
+        "vuejs",
+        "뷰"
+      ],
+      "category": "frontend_framework",
+      "subcategory": "js",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "nuxt",
+      "name": "Nuxt",
+      "aliases": [
+        "nuxt.js",
+        "넥스트js",
+        "뉴엑스트"
+      ],
+      "category": "frontend_framework",
+      "subcategory": "js",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "angular",
+      "name": "Angular",
+      "aliases": [
+        "앵귤러"
+      ],
+      "category": "frontend_framework",
+      "subcategory": "js",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "svelte",
+      "name": "Svelte",
+      "aliases": [
+        "스벨트"
+      ],
+      "category": "frontend_framework",
+      "subcategory": "js",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "flutter",
+      "name": "Flutter",
+      "aliases": [
+        "플러터"
+      ],
+      "category": "mobile_framework",
+      "subcategory": "dart",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "react_native",
+      "name": "React Native",
+      "aliases": [
+        "react native",
+        "react-native",
+        "rn",
+        "리액트 네이티브"
+      ],
+      "category": "mobile_framework",
+      "subcategory": "js",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "swiftui",
+      "name": "SwiftUI",
+      "aliases": [
+        "swift ui",
+        "스위프트ui"
+      ],
+      "category": "mobile_framework",
+      "subcategory": "apple",
+      "license": "proprietary",
+      "is_open_source": false
+    },
+    {
+      "key": "jetpack_compose",
+      "name": "Jetpack Compose",
+      "aliases": [
+        "jetpack",
+        "compose",
+        "젯팩",
+        "젯팩 컴포즈"
+      ],
+      "category": "mobile_framework",
+      "subcategory": "jvm",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "pytorch",
+      "name": "PyTorch",
+      "aliases": [
+        "파이토치",
+        "torch"
+      ],
+      "category": "ai_ml_framework",
+      "subcategory": "python",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "tensorflow",
+      "name": "TensorFlow",
+      "aliases": [
+        "텐서플로",
+        "tf"
+      ],
+      "category": "ai_ml_framework",
+      "subcategory": "python",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "huggingface",
+      "name": "Hugging Face",
+      "aliases": [
+        "hugging face",
+        "transformers",
+        "허깅페이스"
+      ],
+      "category": "ai_ml_framework",
+      "subcategory": "python",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "scikit_learn",
+      "name": "scikit-learn",
+      "aliases": [
+        "scikit-learn",
+        "sklearn",
+        "scikit learn"
+      ],
+      "category": "ai_ml_framework",
+      "subcategory": "python",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "langchain",
+      "name": "LangChain",
+      "aliases": [
+        "랭체인"
+      ],
+      "category": "ai_ml_framework",
+      "subcategory": "python",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "langgraph",
+      "name": "LangGraph",
+      "aliases": [
+        "랭그래프"
+      ],
+      "category": "ai_ml_framework",
+      "subcategory": "python",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "llamaindex",
+      "name": "LlamaIndex",
+      "aliases": [
+        "llama index",
+        "llama-index",
+        "라마인덱스"
+      ],
+      "category": "ai_ml_framework",
+      "subcategory": "python",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "openai",
+      "name": "OpenAI",
+      "aliases": [
+        "openai api",
+        "openai sdk",
+        "chatgpt api"
+      ],
+      "category": "ai_ml_framework",
+      "subcategory": "python",
+      "license": "proprietary",
+      "is_open_source": false
+    },
+    {
+      "key": "rag",
+      "name": "RAG",
+      "aliases": [
+        "retrieval augmented generation",
+        "검색 증강 생성"
+      ],
+      "category": "ai_technique",
+      "subcategory": "ai"
+    },
+    {
+      "key": "fine_tuning",
+      "name": "Fine-tuning",
+      "aliases": [
+        "fine-tuning",
+        "파인튜닝",
+        "finetuning"
+      ],
+      "category": "ai_technique",
+      "subcategory": "ai"
+    },
+    {
+      "key": "prompt_engineering",
+      "name": "프롬프트 엔지니어링",
+      "aliases": [
+        "prompt engineering"
+      ],
+      "category": "ai_technique",
+      "subcategory": "ai"
+    },
+    {
+      "key": "embedding",
+      "name": "임베딩",
+      "aliases": [
+        "embeddings",
+        "벡터 임베딩"
+      ],
+      "category": "ai_technique",
+      "subcategory": "ai"
+    },
+    {
+      "key": "llm_serving",
+      "name": "LLM 서빙",
+      "aliases": [
+        "vllm",
+        "llm serving",
+        "모델 서빙",
+        "ollama"
+      ],
+      "category": "ai_technique",
+      "subcategory": "ai"
+    },
+    {
+      "key": "agent",
+      "name": "AI 에이전트",
+      "aliases": [
+        "ai agent",
+        "에이전트",
+        "agentic"
+      ],
+      "category": "ai_technique",
+      "subcategory": "ai"
+    },
+    {
+      "key": "unity",
+      "name": "Unity",
+      "aliases": [
+        "유니티"
+      ],
+      "category": "game_engine",
+      "subcategory": "game",
+      "license": "proprietary",
+      "is_open_source": false
+    },
+    {
+      "key": "unreal_engine",
+      "name": "Unreal Engine",
+      "aliases": [
+        "언리얼",
+        "ue5",
+        "ue4",
+        "unreal"
+      ],
+      "category": "game_engine",
+      "subcategory": "game",
+      "license": "proprietary",
+      "is_open_source": false
+    },
+    {
+      "key": "postgresql",
+      "name": "PostgreSQL",
+      "aliases": [
+        "postgres",
+        "포스트그레스"
+      ],
+      "category": "database_relational",
+      "subcategory": "db",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "mysql",
+      "name": "MySQL",
+      "aliases": [
+        "마이에스큐엘"
+      ],
+      "category": "database_relational",
+      "subcategory": "db",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "mariadb",
+      "name": "MariaDB",
+      "aliases": [
+        "마리아디비"
+      ],
+      "category": "database_relational",
+      "subcategory": "db",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "mongodb",
+      "name": "MongoDB",
+      "aliases": [
+        "몽고디비",
+        "mongo"
+      ],
+      "category": "database_nosql",
+      "subcategory": "db",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "dynamodb",
+      "name": "DynamoDB",
+      "aliases": [
+        "다이나모디비"
+      ],
+      "category": "database_nosql",
+      "subcategory": "db",
+      "license": "proprietary",
+      "is_open_source": false
+    },
+    {
+      "key": "redis",
+      "name": "Redis",
+      "aliases": [
+        "레디스"
+      ],
+      "category": "database_cache",
+      "subcategory": "db",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "elasticsearch",
+      "name": "Elasticsearch",
+      "aliases": [
+        "elastic",
+        "es",
+        "엘라스틱",
+        "엘라스틱서치"
+      ],
+      "category": "database_search",
+      "subcategory": "db",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "pgvector",
+      "name": "pgvector",
+      "aliases": [
+        "pg vector"
+      ],
+      "category": "database_vector",
+      "subcategory": "db",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "pinecone",
+      "name": "Pinecone",
+      "aliases": [
+        "파인콘"
+      ],
+      "category": "database_vector",
+      "subcategory": "db",
+      "license": "proprietary",
+      "is_open_source": false
+    },
+    {
+      "key": "faiss",
+      "name": "FAISS",
+      "category": "database_vector",
+      "subcategory": "python",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "chromadb",
+      "name": "ChromaDB",
+      "aliases": [
+        "chroma"
+      ],
+      "category": "database_vector",
+      "subcategory": "python",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "weaviate",
+      "name": "Weaviate",
+      "aliases": [
+        "위비에이트"
+      ],
+      "category": "database_vector",
+      "subcategory": "db",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "qdrant",
+      "name": "Qdrant",
+      "aliases": [
+        "큐드란트"
+      ],
+      "category": "database_vector",
+      "subcategory": "db",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "docker",
+      "name": "Docker",
+      "aliases": [
+        "도커",
+        "docker-compose",
+        "docker compose"
+      ],
+      "category": "devops",
+      "subcategory": "devops",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "kubernetes",
+      "name": "Kubernetes",
+      "aliases": [
+        "k8s",
+        "쿠버네티스"
+      ],
+      "category": "devops",
+      "subcategory": "devops",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "nginx",
+      "name": "Nginx",
+      "aliases": [
+        "엔진엑스"
+      ],
+      "category": "devops",
+      "subcategory": "devops",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "github_actions",
+      "name": "GitHub Actions",
+      "aliases": [
+        "github action",
+        "gha"
+      ],
+      "category": "devops",
+      "subcategory": "devops",
+      "license": "proprietary",
+      "is_open_source": false
+    },
+    {
+      "key": "terraform",
+      "name": "Terraform",
+      "aliases": [
+        "테라폼"
+      ],
+      "category": "devops",
+      "subcategory": "devops",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "aws",
+      "name": "AWS",
+      "aliases": [
+        "amazon web services",
+        "아마존 웹 서비스"
+      ],
+      "category": "devops",
+      "subcategory": "devops",
+      "license": "proprietary",
+      "is_open_source": false
+    },
+    {
+      "key": "gcp",
+      "name": "GCP",
+      "aliases": [
+        "google cloud",
+        "구글 클라우드",
+        "google cloud platform"
+      ],
+      "category": "devops",
+      "subcategory": "devops",
+      "license": "proprietary",
+      "is_open_source": false
+    },
+    {
+      "key": "azure",
+      "name": "Azure",
+      "aliases": [
+        "마이크로소프트 애저",
+        "microsoft azure"
+      ],
+      "category": "devops",
+      "subcategory": "devops",
+      "license": "proprietary",
+      "is_open_source": false
+    },
+    {
+      "key": "kafka",
+      "name": "Kafka",
+      "aliases": [
+        "아파치 카프카",
+        "apache kafka"
+      ],
+      "category": "message_queue",
+      "subcategory": "devops",
+      "license": "open_source",
+      "is_open_source": true
+    },
+    {
+      "key": "rabbitmq",
+      "name": "RabbitMQ",
+      "aliases": [
+        "rabbit mq",
+        "래빗엠큐"
+      ],
+      "category": "message_queue",
+      "subcategory": "devops",
+      "license": "open_source",
+      "is_open_source": true
+    }
+  ],
+  "skill": [
+    {
+      "key": "api_design",
+      "name": "API 설계",
+      "aliases": [
+        "api design",
+        "restful api",
+        "api 설계"
+      ],
+      "difficulty": "medium",
+      "skill_type": "technical"
+    },
+    {
+      "key": "system_design",
+      "name": "시스템 설계",
+      "aliases": [
+        "system design",
+        "아키텍처 설계",
+        "architecture design"
+      ],
+      "difficulty": "hard",
+      "skill_type": "technical"
+    },
+    {
+      "key": "troubleshooting",
+      "name": "트러블슈팅",
+      "aliases": [
+        "troubleshooting",
+        "디버깅",
+        "debugging"
+      ],
+      "difficulty": "medium",
+      "skill_type": "technical"
+    },
+    {
+      "key": "team_leading",
+      "name": "팀 리딩",
+      "aliases": [
+        "team leading",
+        "리드",
+        "tech lead",
+        "테크리드"
+      ],
+      "difficulty": "hard",
+      "skill_type": "soft"
+    },
+    {
+      "key": "code_review",
+      "name": "코드 리뷰",
+      "aliases": [
+        "code review",
+        "코드리뷰"
+      ],
+      "difficulty": "medium",
+      "skill_type": "cross_cutting"
+    }
+  ],
+  "role": [
+    {
+      "key": "backend",
+      "name": "백엔드 개발자",
+      "aliases": [
+        "백엔드",
+        "be",
+        "backend engineer",
+        "서버",
+        "server"
+      ],
+      "typical_seniority": [
+        "junior",
+        "mid",
+        "senior",
+        "lead"
+      ]
+    },
+    {
+      "key": "frontend",
+      "name": "프론트엔드 개발자",
+      "aliases": [
+        "프론트엔드",
+        "fe",
+        "frontend engineer",
+        "ui/ux"
+      ],
+      "typical_seniority": [
+        "junior",
+        "mid",
+        "senior",
+        "lead"
+      ]
+    },
+    {
+      "key": "fullstack",
+      "name": "풀스택 개발자",
+      "aliases": [
+        "풀스택",
+        "full-stack",
+        "full stack",
+        "fs"
+      ],
+      "typical_seniority": [
+        "junior",
+        "mid",
+        "senior",
+        "lead"
+      ]
+    },
+    {
+      "key": "ai_ml",
+      "name": "AI/ML 개발자",
+      "aliases": [
+        "ai",
+        "ml",
+        "ai engineer",
+        "ml engineer",
+        "ai/ml",
+        "data scientist",
+        "llm engineer",
+        "ai 개발자",
+        "머신러닝"
+      ],
+      "typical_seniority": [
+        "junior",
+        "mid",
+        "senior",
+        "lead"
+      ]
+    },
+    {
+      "key": "devops",
+      "name": "DevOps 엔지니어",
+      "aliases": [
+        "devops",
+        "인프라",
+        "infra",
+        "sre",
+        "클라우드 엔지니어"
+      ],
+      "typical_seniority": [
+        "mid",
+        "senior",
+        "lead"
+      ]
+    },
+    {
+      "key": "mobile",
+      "name": "모바일 개발자",
+      "aliases": [
+        "모바일",
+        "앱 개발",
+        "app developer",
+        "앱개발자"
+      ],
+      "typical_seniority": [
+        "junior",
+        "mid",
+        "senior"
+      ]
+    },
+    {
+      "key": "pm",
+      "name": "PM/기획자",
+      "aliases": [
+        "기획",
+        "프로덕트 매니저",
+        "product manager",
+        "po",
+        "기획자"
+      ],
+      "typical_seniority": [
+        "junior",
+        "mid",
+        "senior",
+        "lead"
+      ]
+    },
+    {
+      "key": "data",
+      "name": "데이터 엔지니어",
+      "aliases": [
+        "데이터",
+        "data engineer",
+        "데이터 분석",
+        "data analyst",
+        "데이터 파이프라인"
+      ],
+      "typical_seniority": [
+        "junior",
+        "mid",
+        "senior"
+      ]
+    },
+    {
+      "key": "game",
+      "name": "게임 개발자",
+      "aliases": [
+        "게임 개발",
+        "game developer",
+        "game dev"
+      ],
+      "typical_seniority": [
+        "junior",
+        "mid",
+        "senior"
+      ]
+    },
+    {
+      "key": "security",
+      "name": "보안 엔지니어",
+      "aliases": [
+        "security engineer",
+        "정보보안 엔지니어"
+      ],
+      "typical_seniority": [
+        "mid",
+        "senior",
+        "lead"
+      ]
+    }
+  ],
+  "goal": [
+    {
+      "key": "employment",
+      "name": "취업",
+      "aliases": [
+        "취직",
+        "career",
+        "취업 준비",
+        "취준"
+      ],
+      "goal_category": "career"
+    },
+    {
+      "key": "startup",
+      "name": "창업",
+      "aliases": [
+        "스타트업",
+        "사업",
+        "창업가"
+      ],
+      "goal_category": "business"
+    },
+    {
+      "key": "excellence",
+      "name": "우수자 인증",
+      "aliases": [
+        "우수",
+        "우수자",
+        "해외 연수"
+      ],
+      "goal_category": "recognition"
+    },
+    {
+      "key": "monetization",
+      "name": "수익화",
+      "aliases": [
+        "수익",
+        "revenue",
+        "monetize"
+      ],
+      "goal_category": "financial"
+    },
+    {
+      "key": "portfolio",
+      "name": "포트폴리오",
+      "aliases": [
+        "포폴"
+      ],
+      "goal_category": "career"
+    }
+  ],
+  "domain": [
+    {
+      "key": "finance_domain",
+      "name": "금융/핀테크",
+      "aliases": [
+        "finance",
+        "금융",
+        "핀테크",
+        "fintech",
+        "투자",
+        "payment",
+        "페이먼트",
+        "증권",
+        "보험"
+      ],
+      "industry_sector": "finance"
+    },
+    {
+      "key": "healthcare_domain",
+      "name": "의료/헬스케어",
+      "aliases": [
+        "healthcare",
+        "의료",
+        "헬스케어",
+        "health",
+        "병원",
+        "바이오"
+      ],
+      "industry_sector": "healthcare"
+    },
+    {
+      "key": "education_domain",
+      "name": "교육/에듀테크",
+      "aliases": [
+        "education",
+        "교육",
+        "에듀테크",
+        "edtech",
+        "학습"
+      ],
+      "industry_sector": "education"
+    },
+    {
+      "key": "cybersecurity_domain",
+      "name": "보안",
+      "aliases": [
+        "cybersecurity",
+        "보안",
+        "정보보안",
+        "해킹"
+      ],
+      "industry_sector": "tech"
+    },
+    {
+      "key": "gaming_domain",
+      "name": "게임",
+      "aliases": [
+        "gaming",
+        "게임 산업",
+        "게임 도메인",
+        "게임 서비스"
+      ],
+      "industry_sector": "entertainment"
+    },
+    {
+      "key": "entertainment_domain",
+      "name": "미디어/엔터",
+      "aliases": [
+        "entertainment",
+        "미디어",
+        "ott",
+        "콘텐츠",
+        "엔터테인먼트",
+        "음악",
+        "영상"
+      ],
+      "industry_sector": "entertainment"
+    },
+    {
+      "key": "social_domain",
+      "name": "소셜/커뮤니티",
+      "aliases": [
+        "social",
+        "소셜",
+        "커뮤니티",
+        "sns"
+      ],
+      "industry_sector": "other"
+    },
+    {
+      "key": "ecommerce_domain",
+      "name": "이커머스",
+      "aliases": [
+        "ecommerce",
+        "이커머스",
+        "쇼핑",
+        "커머스",
+        "e-commerce"
+      ],
+      "industry_sector": "retail"
+    },
+    {
+      "key": "food_domain",
+      "name": "푸드/배달",
+      "aliases": [
+        "food",
+        "음식",
+        "식당",
+        "요식업",
+        "배달"
+      ],
+      "industry_sector": "retail"
+    },
+    {
+      "key": "mobility_domain",
+      "name": "모빌리티",
+      "aliases": [
+        "mobility",
+        "모빌리티",
+        "교통",
+        "자동차",
+        "자율주행"
+      ],
+      "industry_sector": "infrastructure"
+    },
+    {
+      "key": "ai_research_domain",
+      "name": "AI/연구",
+      "aliases": [
+        "ai_research",
+        "ai 연구",
+        "nlp",
+        "cv",
+        "검색",
+        "추천",
+        "recommendation"
+      ],
+      "industry_sector": "tech"
+    },
+    {
+      "key": "infra_devops_domain",
+      "name": "인프라/DevOps",
+      "aliases": [
+        "infra_devops",
+        "인프라 도메인",
+        "devops 도메인",
+        "클라우드 인프라"
+      ],
+      "industry_sector": "infrastructure"
+    },
+    {
+      "key": "blockchain_domain",
+      "name": "블록체인/Web3",
+      "aliases": [
+        "blockchain",
+        "블록체인",
+        "web3",
+        "nft",
+        "defi",
+        "크립토",
+        "crypto"
+      ],
+      "industry_sector": "tech"
+    }
+  ],
+  "availability": [
+    {
+      "key": "fulltime",
+      "name": "풀타임",
+      "aliases": [
+        "full-time",
+        "전념",
+        "올인",
+        "상시"
+      ],
+      "hours_per_week_min": 40
+    },
+    {
+      "key": "partial",
+      "name": "재학 중",
+      "aliases": [
+        "재학",
+        "수업",
+        "학기 중",
+        "평일"
+      ],
+      "hours_per_week_min": 10,
+      "hours_per_week_max": 25
+    },
+    {
+      "key": "leave_of_absence",
+      "name": "휴학 중",
+      "aliases": [
+        "휴학",
+        "휴학예정"
+      ],
+      "hours_per_week_min": 20,
+      "hours_per_week_max": 40
+    },
+    {
+      "key": "graduated",
+      "name": "졸업",
+      "aliases": [
+        "졸업유예",
+        "졸업 예정",
+        "수료"
+      ],
+      "hours_per_week_min": 40
+    },
+    {
+      "key": "military",
+      "name": "군 복무",
+      "aliases": [
+        "현역",
+        "군복무 중",
+        "전역 예정",
+        "군 복무 예정",
+        "입대 예정"
+      ],
+      "hours_per_week_min": 0,
+      "hours_per_week_max": 5
+    }
+  ],
+  "work_style": [
+    {
+      "key": "in_person",
+      "name": "대면 선호",
+      "aliases": [
+        "대면",
+        "오프라인",
+        "센터",
+        "직접 만나"
+      ],
+      "is_remote": false
+    },
+    {
+      "key": "remote",
+      "name": "원격 선호",
+      "aliases": [
+        "비대면",
+        "온라인",
+        "원격",
+        "재택",
+        "remote work"
+      ],
+      "is_remote": true
+    },
+    {
+      "key": "hybrid",
+      "name": "혼합",
+      "aliases": [
+        "온오프라인",
+        "상황에 따라"
+      ]
+    }
+  ],
+  "experience_type": [
+    {
+      "key": "project_experience",
+      "name": "프로젝트 경험",
+      "aliases": [
+        "프로젝트",
+        "팀 프로젝트",
+        "개인 프로젝트"
+      ],
+      "is_professional": false
+    },
+    {
+      "key": "internship_experience",
+      "name": "인턴 경험",
+      "aliases": [
+        "인턴",
+        "인턴십",
+        "internship"
+      ],
+      "is_professional": true
+    },
+    {
+      "key": "company_experience",
+      "name": "회사 경험",
+      "aliases": [
+        "회사",
+        "직장",
+        "재직",
+        "경력"
+      ],
+      "is_professional": true
+    },
+    {
+      "key": "production_experience",
+      "name": "실서비스 경험",
+      "aliases": [
+        "실서비스",
+        "운영 경험",
+        "production"
+      ],
+      "is_professional": true
+    }
+  ],
+  "education": [
+    {
+      "key": "bootcamp",
+      "name": "부트캠프",
+      "aliases": [
+        "코딩 부트캠프",
+        "bootcamp"
+      ],
+      "credential_level": "certificate",
+      "duration_months": 6
+    },
+    {
+      "key": "cs_degree",
+      "name": "컴퓨터공학 전공",
+      "aliases": [
+        "컴공",
+        "cs",
+        "전공",
+        "sw전공"
+      ],
+      "credential_level": "undergraduate",
+      "duration_months": 48
+    },
+    {
+      "key": "self_taught",
+      "name": "독학",
+      "aliases": [
+        "self-taught",
+        "자기학습"
+      ]
+    }
+  ],
+  "certification": [
+    {
+      "key": "information_processing_engineer",
+      "name": "정보처리기사",
+      "aliases": [
+        "정처기"
+      ],
+      "issuing_org": "한국산업인력공단"
+    },
+    {
+      "key": "aws_certification",
+      "name": "AWS 자격증",
+      "aliases": [
+        "aws cert",
+        "aws saa",
+        "aws solutions architect"
+      ],
+      "issuing_org": "Amazon",
+      "validity_years": 3
+    },
+    {
+      "key": "gcp_certification",
+      "name": "GCP 자격증",
+      "aliases": [
+        "gcp cert"
+      ],
+      "issuing_org": "Google",
+      "validity_years": 2
+    },
+    {
+      "key": "azure_certification",
+      "name": "Azure 자격증",
+      "aliases": [
+        "azure cert",
+        "az-900",
+        "az-204"
+      ],
+      "issuing_org": "Microsoft",
+      "validity_years": 2
+    }
+  ],
+  "location": [
+    {
+      "key": "seoul",
+      "name": "서울",
+      "aliases": [
+        "강남",
+        "마포",
+        "서울 전체"
+      ],
+      "region": "capital"
+    },
+    {
+      "key": "pangyo",
+      "name": "판교",
+      "aliases": [
+        "성남",
+        "분당"
+      ],
+      "region": "metropolitan"
+    },
+    {
+      "key": "gyeonggi",
+      "name": "경기도",
+      "aliases": [
+        "경기",
+        "수원",
+        "안양"
+      ],
+      "region": "metropolitan"
+    }
+  ],
+  "user": [
+    {
+      "key": "user_18",
+      "name": "권태영 | Notion",
+      "aliases": [],
+      "user_id": 18
+    },
+    {
+      "key": "user_19",
+      "name": "권태화 | Notion",
+      "aliases": [],
+      "user_id": 19
+    },
+    {
+      "key": "user_20",
+      "name": "김건우(1109)",
+      "aliases": [],
+      "user_id": 20
+    },
+    {
+      "key": "user_21",
+      "name": "김건우(1784) | Notion",
+      "aliases": [],
+      "user_id": 21
+    },
+    {
+      "key": "user_22",
+      "name": "김근휘 | Notion",
+      "aliases": [],
+      "user_id": 22
+    },
+    {
+      "key": "user_23",
+      "name": "김나영 | Notion",
+      "aliases": [],
+      "user_id": 23
+    },
+    {
+      "key": "user_24",
+      "name": "김다은 | Notion",
+      "aliases": [],
+      "user_id": 24
+    },
+    {
+      "key": "user_25",
+      "name": "김대연 | Notion",
+      "aliases": [],
+      "user_id": 25
+    },
+    {
+      "key": "user_26",
+      "name": "김덕현 | Notion",
+      "aliases": [],
+      "user_id": 26
+    },
+    {
+      "key": "user_27",
+      "name": "김도완 | Notion",
+      "aliases": [],
+      "user_id": 27
+    },
+    {
+      "key": "user_28",
+      "name": "김도현 | Notion",
+      "aliases": [],
+      "user_id": 28
+    },
+    {
+      "key": "user_29",
+      "name": "김도형 | Notion",
+      "aliases": [],
+      "user_id": 29
+    },
+    {
+      "key": "user_30",
+      "name": "김도훈 | Notion",
+      "aliases": [],
+      "user_id": 30
+    },
+    {
+      "key": "user_31",
+      "name": "김동건 | Notion",
+      "aliases": [],
+      "user_id": 31
+    },
+    {
+      "key": "user_32",
+      "name": "김동민 | Notion",
+      "aliases": [],
+      "user_id": 32
+    },
+    {
+      "key": "user_33",
+      "name": "김동우 | Notion",
+      "aliases": [],
+      "user_id": 33
+    },
+    {
+      "key": "user_34",
+      "name": "김동호 | Notion",
+      "aliases": [],
+      "user_id": 34
+    },
+    {
+      "key": "user_35",
+      "name": "김동희 | Notion",
+      "aliases": [],
+      "user_id": 35
+    },
+    {
+      "key": "user_36",
+      "name": "김명식 | Notion",
+      "aliases": [],
+      "user_id": 36
+    },
+    {
+      "key": "user_37",
+      "name": "김민석 | Notion",
+      "aliases": [],
+      "user_id": 37
+    },
+    {
+      "key": "user_38",
+      "name": "김민성 | Notion",
+      "aliases": [],
+      "user_id": 38
+    },
+    {
+      "key": "user_39",
+      "name": "김민솔 | Notion",
+      "aliases": [],
+      "user_id": 39
+    },
+    {
+      "key": "user_40",
+      "name": "김민우 | Notion",
+      "aliases": [],
+      "user_id": 40
+    },
+    {
+      "key": "user_41",
+      "name": "김민준 | Notion",
+      "aliases": [],
+      "user_id": 41
+    },
+    {
+      "key": "user_42",
+      "name": "김민형 | Notion",
+      "aliases": [],
+      "user_id": 42
+    },
+    {
+      "key": "user_43",
+      "name": "김민형(2363) | Notion",
+      "aliases": [],
+      "user_id": 43
+    },
+    {
+      "key": "user_44",
+      "name": "김병연 | Notion",
+      "aliases": [],
+      "user_id": 44
+    },
+    {
+      "key": "user_45",
+      "name": "김병찬(수정했어요! 많관부!) | Notion",
+      "aliases": [],
+      "user_id": 45
+    },
+    {
+      "key": "user_46",
+      "name": "김선규 | Notion",
+      "aliases": [],
+      "user_id": 46
+    },
+    {
+      "key": "user_47",
+      "name": "김성문 | Notion",
+      "aliases": [],
+      "user_id": 47
+    },
+    {
+      "key": "user_48",
+      "name": "김성주 | Notion",
+      "aliases": [],
+      "user_id": 48
+    },
+    {
+      "key": "user_49",
+      "name": "김소원 | Notion",
+      "aliases": [],
+      "user_id": 49
+    },
+    {
+      "key": "user_50",
+      "name": "김승원 | Notion",
+      "aliases": [],
+      "user_id": 50
+    },
+    {
+      "key": "user_51",
+      "name": "김시영 | Notion",
+      "aliases": [],
+      "user_id": 51
+    },
+    {
+      "key": "user_52",
+      "name": "김시원 | Notion",
+      "aliases": [],
+      "user_id": 52
+    },
+    {
+      "key": "user_53",
+      "name": "김영주 | Notion",
+      "aliases": [],
+      "user_id": 53
+    },
+    {
+      "key": "user_54",
+      "name": "김영준 | Notion",
+      "aliases": [],
+      "user_id": 54
+    },
+    {
+      "key": "user_55",
+      "name": "김영표 | Notion",
+      "aliases": [],
+      "user_id": 55
+    },
+    {
+      "key": "user_56",
+      "name": "김예성 | Notion",
+      "aliases": [],
+      "user_id": 56
+    },
+    {
+      "key": "user_57",
+      "name": "김예진 | Notion",
+      "aliases": [],
+      "user_id": 57
+    },
+    {
+      "key": "user_58",
+      "name": "김운경 | Notion",
+      "aliases": [],
+      "user_id": 58
+    },
+    {
+      "key": "user_59",
+      "name": "김유현 | Notion",
+      "aliases": [],
+      "user_id": 59
+    },
+    {
+      "key": "user_60",
+      "name": "김재원 | Notion",
+      "aliases": [],
+      "user_id": 60
+    },
+    {
+      "key": "user_61",
+      "name": "김재헌 | Notion",
+      "aliases": [],
+      "user_id": 61
+    },
+    {
+      "key": "user_62",
+      "name": "김정현 | Notion",
+      "aliases": [],
+      "user_id": 62
+    },
+    {
+      "key": "user_63",
+      "name": "김정훈 | Notion",
+      "aliases": [],
+      "user_id": 63
+    },
+    {
+      "key": "user_64",
+      "name": "김준서 | Notion",
+      "aliases": [],
+      "user_id": 64
+    },
+    {
+      "key": "user_65",
+      "name": "김준수 | Notion",
+      "aliases": [],
+      "user_id": 65
+    },
+    {
+      "key": "user_66",
+      "name": "김준호 | Notion",
+      "aliases": [],
+      "user_id": 66
+    },
+    {
+      "key": "user_67",
+      "name": "김지성 | Notion",
+      "aliases": [],
+      "user_id": 67
+    },
+    {
+      "key": "user_68",
+      "name": "김지용 | Notion",
+      "aliases": [],
+      "user_id": 68
+    },
+    {
+      "key": "user_69",
+      "name": "김지호 | Notion",
+      "aliases": [],
+      "user_id": 69
+    },
+    {
+      "key": "user_70",
+      "name": "김지환(6931) | Notion",
+      "aliases": [],
+      "user_id": 70
+    },
+    {
+      "key": "user_71",
+      "name": "김지환(7577) | Notion",
+      "aliases": [],
+      "user_id": 71
+    },
+    {
+      "key": "user_72",
+      "name": "김진기 | Notion",
+      "aliases": [],
+      "user_id": 72
+    },
+    {
+      "key": "user_73",
+      "name": "김채원 | Notion",
+      "aliases": [],
+      "user_id": 73
+    },
+    {
+      "key": "user_74",
+      "name": "김태균 | Notion",
+      "aliases": [],
+      "user_id": 74
+    },
+    {
+      "key": "user_75",
+      "name": "김태우 | Notion",
+      "aliases": [],
+      "user_id": 75
+    },
+    {
+      "key": "user_76",
+      "name": "김하균 | Notion",
+      "aliases": [],
+      "user_id": 76
+    },
+    {
+      "key": "user_77",
+      "name": "김한빈 | Notion",
+      "aliases": [],
+      "user_id": 77
+    },
+    {
+      "key": "user_78",
+      "name": "김해울 | Notion",
+      "aliases": [],
+      "user_id": 78
+    },
+    {
+      "key": "user_79",
+      "name": "김해찬 | Notion",
+      "aliases": [],
+      "user_id": 79
+    },
+    {
+      "key": "user_80",
+      "name": "김해환 | Notion",
+      "aliases": [],
+      "user_id": 80
+    },
+    {
+      "key": "user_81",
+      "name": "김현승 | Notion",
+      "aliases": [],
+      "user_id": 81
+    },
+    {
+      "key": "user_82",
+      "name": "김현지 | Notion",
+      "aliases": [],
+      "user_id": 82
+    },
+    {
+      "key": "user_83",
+      "name": "김혜주 | Notion",
+      "aliases": [],
+      "user_id": 83
+    },
+    {
+      "key": "user_84",
+      "name": "남동완 | Notion",
+      "aliases": [],
+      "user_id": 84
+    },
+    {
+      "key": "user_85",
+      "name": "남현우 | Notion",
+      "aliases": [],
+      "user_id": 85
+    },
+    {
+      "key": "user_86",
+      "name": "노재원 | Notion",
+      "aliases": [],
+      "user_id": 86
+    },
+    {
+      "key": "user_87",
+      "name": "노준영 (팀빌딩 완료) | Notion",
+      "aliases": [],
+      "user_id": 87
+    },
+    {
+      "key": "user_88",
+      "name": "노창준 | Notion",
+      "aliases": [],
+      "user_id": 88
+    },
+    {
+      "key": "user_89",
+      "name": "류지성 | Notion",
+      "aliases": [],
+      "user_id": 89
+    },
+    {
+      "key": "user_90",
+      "name": "민재홍 | Notion",
+      "aliases": [],
+      "user_id": 90
+    },
+    {
+      "key": "user_91",
+      "name": "박대영 | Notion",
+      "aliases": [],
+      "user_id": 91
+    },
+    {
+      "key": "user_92",
+      "name": "박민우 | Notion",
+      "aliases": [],
+      "user_id": 92
+    },
+    {
+      "key": "user_93",
+      "name": "박상돈 | Notion",
+      "aliases": [],
+      "user_id": 93
+    },
+    {
+      "key": "user_94",
+      "name": "박상민 | Notion",
+      "aliases": [],
+      "user_id": 94
+    },
+    {
+      "key": "user_95",
+      "name": "박성준 | Notion",
+      "aliases": [],
+      "user_id": 95
+    },
+    {
+      "key": "user_96",
+      "name": "박성현 | Notion",
+      "aliases": [],
+      "user_id": 96
+    },
+    {
+      "key": "user_97",
+      "name": "박세민 | Notion",
+      "aliases": [],
+      "user_id": 97
+    },
+    {
+      "key": "user_98",
+      "name": "박세원 | Notion",
+      "aliases": [],
+      "user_id": 98
+    },
+    {
+      "key": "user_99",
+      "name": "박세종",
+      "aliases": [],
+      "user_id": 99
+    },
+    {
+      "key": "user_100",
+      "name": "박수헌 | Notion",
+      "aliases": [],
+      "user_id": 100
+    },
+    {
+      "key": "user_101",
+      "name": "박시원 | Notion",
+      "aliases": [],
+      "user_id": 101
+    },
+    {
+      "key": "user_102",
+      "name": "박영준 | Notion",
+      "aliases": [],
+      "user_id": 102
+    },
+    {
+      "key": "user_103",
+      "name": "박윤서 | Notion",
+      "aliases": [],
+      "user_id": 103
+    },
+    {
+      "key": "user_104",
+      "name": "박윤수 | Notion",
+      "aliases": [],
+      "user_id": 104
+    },
+    {
+      "key": "user_105",
+      "name": "박장우 | Notion",
+      "aliases": [],
+      "user_id": 105
+    },
+    {
+      "key": "user_106",
+      "name": "박재환 | Notion",
+      "aliases": [],
+      "user_id": 106
+    },
+    {
+      "key": "user_107",
+      "name": "박주헌 | Notion",
+      "aliases": [],
+      "user_id": 107
+    },
+    {
+      "key": "user_108",
+      "name": "박준하 | Notion",
+      "aliases": [],
+      "user_id": 108
+    },
+    {
+      "key": "user_109",
+      "name": "박준혁 | Notion",
+      "aliases": [],
+      "user_id": 109
+    },
+    {
+      "key": "user_110",
+      "name": "박준현 (미국연수 가자!) | Notion",
+      "aliases": [],
+      "user_id": 110
+    },
+    {
+      "key": "user_111",
+      "name": "박지유 | Notion",
+      "aliases": [],
+      "user_id": 111
+    },
+    {
+      "key": "user_112",
+      "name": "박지은 | Notion",
+      "aliases": [],
+      "user_id": 112
+    },
+    {
+      "key": "user_113",
+      "name": "박찬영 | Notion",
+      "aliases": [],
+      "user_id": 113
+    },
+    {
+      "key": "user_114",
+      "name": "박천웅 | Notion",
+      "aliases": [],
+      "user_id": 114
+    },
+    {
+      "key": "user_115",
+      "name": "박철민 | Notion",
+      "aliases": [],
+      "user_id": 115
+    },
+    {
+      "key": "user_116",
+      "name": "박태우 | Notion",
+      "aliases": [],
+      "user_id": 116
+    },
+    {
+      "key": "user_117",
+      "name": "박태현 | Notion",
+      "aliases": [],
+      "user_id": 117
+    },
+    {
+      "key": "user_118",
+      "name": "박하은 | Notion",
+      "aliases": [],
+      "user_id": 118
+    },
+    {
+      "key": "user_119",
+      "name": "박현규 | Notion",
+      "aliases": [],
+      "user_id": 119
+    },
+    {
+      "key": "user_120",
+      "name": "배영빈 | Notion",
+      "aliases": [],
+      "user_id": 120
+    },
+    {
+      "key": "user_121",
+      "name": "배윤재 | Notion",
+      "aliases": [],
+      "user_id": 121
+    },
+    {
+      "key": "user_122",
+      "name": "배인수 | Notion",
+      "aliases": [],
+      "user_id": 122
+    },
+    {
+      "key": "user_123",
+      "name": "백승우 | Notion",
+      "aliases": [],
+      "user_id": 123
+    },
+    {
+      "key": "user_124",
+      "name": "백준현 | Notion",
+      "aliases": [],
+      "user_id": 124
+    },
+    {
+      "key": "user_125",
+      "name": "서성민 | Notion",
+      "aliases": [],
+      "user_id": 125
+    },
+    {
+      "key": "user_126",
+      "name": "서연수 | Notion",
+      "aliases": [],
+      "user_id": 126
+    },
+    {
+      "key": "user_127",
+      "name": "서주원 | Notion",
+      "aliases": [],
+      "user_id": 127
+    },
+    {
+      "key": "user_128",
+      "name": "소유진 | Notion",
+      "aliases": [],
+      "user_id": 128
+    },
+    {
+      "key": "user_129",
+      "name": "소태호 | Notion",
+      "aliases": [],
+      "user_id": 129
+    },
+    {
+      "key": "user_130",
+      "name": "손기령 | Notion",
+      "aliases": [],
+      "user_id": 130
+    },
+    {
+      "key": "user_131",
+      "name": "손동현 | Notion",
+      "aliases": [],
+      "user_id": 131
+    },
+    {
+      "key": "user_132",
+      "name": "손예원 | Notion",
+      "aliases": [],
+      "user_id": 132
+    },
+    {
+      "key": "user_133",
+      "name": "손의현 | Notion",
+      "aliases": [],
+      "user_id": 133
+    },
+    {
+      "key": "user_134",
+      "name": "송민아 | Notion",
+      "aliases": [],
+      "user_id": 134
+    },
+    {
+      "key": "user_135",
+      "name": "송상현 | Notion",
+      "aliases": [],
+      "user_id": 135
+    },
+    {
+      "key": "user_136",
+      "name": "송승윤 | Notion",
+      "aliases": [],
+      "user_id": 136
+    },
+    {
+      "key": "user_137",
+      "name": "송재현 | Notion",
+      "aliases": [],
+      "user_id": 137
+    },
+    {
+      "key": "user_138",
+      "name": "송준언 | Notion",
+      "aliases": [],
+      "user_id": 138
+    },
+    {
+      "key": "user_139",
+      "name": "신동륜 | Notion",
+      "aliases": [],
+      "user_id": 139
+    },
+    {
+      "key": "user_140",
+      "name": "신동운 | Notion",
+      "aliases": [],
+      "user_id": 140
+    },
+    {
+      "key": "user_141",
+      "name": "신소희 | Notion",
+      "aliases": [],
+      "user_id": 141
+    },
+    {
+      "key": "user_142",
+      "name": "신승민 | Notion",
+      "aliases": [],
+      "user_id": 142
+    },
+    {
+      "key": "user_143",
+      "name": "신윤지 | Notion",
+      "aliases": [],
+      "user_id": 143
+    },
+    {
+      "key": "user_144",
+      "name": "신진범 | Notion",
+      "aliases": [],
+      "user_id": 144
+    },
+    {
+      "key": "user_145",
+      "name": "신현성 | Notion",
+      "aliases": [],
+      "user_id": 145
+    },
+    {
+      "key": "user_146",
+      "name": "신현재 | Notion",
+      "aliases": [],
+      "user_id": 146
+    },
+    {
+      "key": "user_147",
+      "name": "신혜정 | Notion",
+      "aliases": [],
+      "user_id": 147
+    },
+    {
+      "key": "user_148",
+      "name": "신희찬 | Notion",
+      "aliases": [],
+      "user_id": 148
+    },
+    {
+      "key": "user_149",
+      "name": "심상훈 | Notion",
+      "aliases": [],
+      "user_id": 149
+    },
+    {
+      "key": "user_150",
+      "name": "심종한 | Notion",
+      "aliases": [],
+      "user_id": 150
+    },
+    {
+      "key": "user_151",
+      "name": "안수빈 | Notion",
+      "aliases": [],
+      "user_id": 151
+    },
+    {
+      "key": "user_152",
+      "name": "양재헌 | Notion",
+      "aliases": [],
+      "user_id": 152
+    },
+    {
+      "key": "user_153",
+      "name": "양하정 | Notion",
+      "aliases": [],
+      "user_id": 153
+    },
+    {
+      "key": "user_154",
+      "name": "양현서 | Notion",
+      "aliases": [],
+      "user_id": 154
+    },
+    {
+      "key": "user_155",
+      "name": "엄선명 | Notion",
+      "aliases": [],
+      "user_id": 155
+    },
+    {
+      "key": "user_156",
+      "name": "염지환 | Notion",
+      "aliases": [],
+      "user_id": 156
+    },
+    {
+      "key": "user_157",
+      "name": "오세인 | AI Agent Engineer AI | Notion",
+      "aliases": [],
+      "user_id": 157
+    },
+    {
+      "key": "user_158",
+      "name": "오수현 | Notion",
+      "aliases": [],
+      "user_id": 158
+    },
+    {
+      "key": "user_159",
+      "name": "오연우 | Notion",
+      "aliases": [],
+      "user_id": 159
+    },
+    {
+      "key": "user_160",
+      "name": "오예찬 | Notion",
+      "aliases": [],
+      "user_id": 160
+    },
+    {
+      "key": "user_161",
+      "name": "왕기민 | Notion",
+      "aliases": [],
+      "user_id": 161
+    },
+    {
+      "key": "user_162",
+      "name": "우재민 | Notion",
+      "aliases": [],
+      "user_id": 162
+    },
+    {
+      "key": "user_163",
+      "name": "원동규 | Notion",
+      "aliases": [],
+      "user_id": 163
+    },
+    {
+      "key": "user_164",
+      "name": "위승빈 (Beeni) | Notion",
+      "aliases": [],
+      "user_id": 164
+    },
+    {
+      "key": "user_165",
+      "name": "유동근 | Notion",
+      "aliases": [],
+      "user_id": 165
+    },
+    {
+      "key": "user_166",
+      "name": "유민주 | Notion",
+      "aliases": [],
+      "user_id": 166
+    },
+    {
+      "key": "user_167",
+      "name": "유승헌 | Notion",
+      "aliases": [],
+      "user_id": 167
+    },
+    {
+      "key": "user_168",
+      "name": "유지형 | Notion",
+      "aliases": [],
+      "user_id": 168
+    },
+    {
+      "key": "user_169",
+      "name": "유혁진 | Notion",
+      "aliases": [],
+      "user_id": 169
+    },
+    {
+      "key": "user_170",
+      "name": "유호균 | Notion",
+      "aliases": [],
+      "user_id": 170
+    },
+    {
+      "key": "user_171",
+      "name": "윤강훈 | Notion",
+      "aliases": [],
+      "user_id": 171
+    },
+    {
+      "key": "user_172",
+      "name": "윤상민 | Notion",
+      "aliases": [],
+      "user_id": 172
+    },
+    {
+      "key": "user_173",
+      "name": "윤성민 | Notion",
+      "aliases": [],
+      "user_id": 173
+    },
+    {
+      "key": "user_174",
+      "name": "윤영준 | Notion",
+      "aliases": [],
+      "user_id": 174
+    },
+    {
+      "key": "user_175",
+      "name": "이강식 | Notion",
+      "aliases": [],
+      "user_id": 175
+    },
+    {
+      "key": "user_176",
+      "name": "이강혁 | Notion",
+      "aliases": [],
+      "user_id": 176
+    },
+    {
+      "key": "user_177",
+      "name": "이다은 | Notion",
+      "aliases": [],
+      "user_id": 177
+    },
+    {
+      "key": "user_178",
+      "name": "이동건 | Notion",
+      "aliases": [],
+      "user_id": 178
+    },
+    {
+      "key": "user_179",
+      "name": "이동형 | Notion",
+      "aliases": [],
+      "user_id": 179
+    },
+    {
+      "key": "user_180",
+      "name": "이민욱 | Notion",
+      "aliases": [],
+      "user_id": 180
+    },
+    {
+      "key": "user_181",
+      "name": "이병윤 | Notion",
+      "aliases": [],
+      "user_id": 181
+    },
+    {
+      "key": "user_182",
+      "name": "이상현 | Notion",
+      "aliases": [],
+      "user_id": 182
+    },
+    {
+      "key": "user_183",
+      "name": "이성은 | Notion",
+      "aliases": [],
+      "user_id": 183
+    },
+    {
+      "key": "user_184",
+      "name": "이승범 | Notion",
+      "aliases": [],
+      "user_id": 184
+    },
+    {
+      "key": "user_185",
+      "name": "이승상 | Notion",
+      "aliases": [],
+      "user_id": 185
+    },
+    {
+      "key": "user_186",
+      "name": "이승주 | Notion",
+      "aliases": [],
+      "user_id": 186
+    },
+    {
+      "key": "user_187",
+      "name": "이예은 | Notion",
+      "aliases": [],
+      "user_id": 187
+    },
+    {
+      "key": "user_188",
+      "name": "이예진 | Notion",
+      "aliases": [],
+      "user_id": 188
+    },
+    {
+      "key": "user_189",
+      "name": "이용준 | Notion",
+      "aliases": [],
+      "user_id": 189
+    },
+    {
+      "key": "user_190",
+      "name": "이용탁 | Notion",
+      "aliases": [],
+      "user_id": 190
+    },
+    {
+      "key": "user_191",
+      "name": "이유리 | Notion",
+      "aliases": [],
+      "user_id": 191
+    },
+    {
+      "key": "user_192",
+      "name": "이유제 | Notion",
+      "aliases": [],
+      "user_id": 192
+    },
+    {
+      "key": "user_193",
+      "name": "이유준 | Notion",
+      "aliases": [],
+      "user_id": 193
+    },
+    {
+      "key": "user_194",
+      "name": "이은지 | Notion",
+      "aliases": [],
+      "user_id": 194
+    },
+    {
+      "key": "user_195",
+      "name": "이재성 | Notion",
+      "aliases": [],
+      "user_id": 195
+    },
+    {
+      "key": "user_196",
+      "name": "이재영 | Notion",
+      "aliases": [],
+      "user_id": 196
+    },
+    {
+      "key": "user_197",
+      "name": "이종윤 | Notion",
+      "aliases": [],
+      "user_id": 197
+    },
+    {
+      "key": "user_198",
+      "name": "이종학 | Notion",
+      "aliases": [],
+      "user_id": 198
+    },
+    {
+      "key": "user_199",
+      "name": "이주한 | Notion",
+      "aliases": [],
+      "user_id": 199
+    },
+    {
+      "key": "user_200",
+      "name": "이주호 : 여의도 거주, 휴학 중 | Notion",
+      "aliases": [],
+      "user_id": 200
+    },
+    {
+      "key": "user_201",
+      "name": "이준서 | Notion",
+      "aliases": [],
+      "user_id": 201
+    },
+    {
+      "key": "user_202",
+      "name": "이준영 | Notion",
+      "aliases": [],
+      "user_id": 202
+    },
+    {
+      "key": "user_203",
+      "name": "이준혁 | Notion",
+      "aliases": [],
+      "user_id": 203
+    },
+    {
+      "key": "user_204",
+      "name": "이준형 | Notion",
+      "aliases": [],
+      "user_id": 204
+    },
+    {
+      "key": "user_205",
+      "name": "이중곤 | Notion",
+      "aliases": [],
+      "user_id": 205
+    },
+    {
+      "key": "user_206",
+      "name": "이진우 | Notion",
+      "aliases": [],
+      "user_id": 206
+    },
+    {
+      "key": "user_207",
+      "name": "이진중 | Notion",
+      "aliases": [],
+      "user_id": 207
+    },
+    {
+      "key": "user_208",
+      "name": "이채은 | Notion",
+      "aliases": [],
+      "user_id": 208
+    },
+    {
+      "key": "user_209",
+      "name": "이충안 | Notion",
+      "aliases": [],
+      "user_id": 209
+    },
+    {
+      "key": "user_210",
+      "name": "이태규 | Notion",
+      "aliases": [],
+      "user_id": 210
+    },
+    {
+      "key": "user_211",
+      "name": "이태석 | Notion",
+      "aliases": [],
+      "user_id": 211
+    },
+    {
+      "key": "user_212",
+      "name": "이한길 | Notion",
+      "aliases": [],
+      "user_id": 212
+    },
+    {
+      "key": "user_213",
+      "name": "이현정 | Notion",
+      "aliases": [],
+      "user_id": 213
+    },
+    {
+      "key": "user_214",
+      "name": "임동준 | Notion",
+      "aliases": [],
+      "user_id": 214
+    },
+    {
+      "key": "user_215",
+      "name": "임세현 | Notion",
+      "aliases": [],
+      "user_id": 215
+    },
+    {
+      "key": "user_216",
+      "name": "임원재 | Notion",
+      "aliases": [],
+      "user_id": 216
+    },
+    {
+      "key": "user_217",
+      "name": "임제형 | Notion",
+      "aliases": [],
+      "user_id": 217
+    },
+    {
+      "key": "user_218",
+      "name": "임준용 | Notion",
+      "aliases": [],
+      "user_id": 218
+    },
+    {
+      "key": "user_219",
+      "name": "임준우 | Notion",
+      "aliases": [],
+      "user_id": 219
+    },
+    {
+      "key": "user_220",
+      "name": "임준현 | Notion",
+      "aliases": [],
+      "user_id": 220
+    },
+    {
+      "key": "user_221",
+      "name": "임지빈 | Notion",
+      "aliases": [],
+      "user_id": 221
+    },
+    {
+      "key": "user_222",
+      "name": "임찬영 | Notion",
+      "aliases": [],
+      "user_id": 222
+    },
+    {
+      "key": "user_223",
+      "name": "임채영 | Notion",
+      "aliases": [],
+      "user_id": 223
+    },
+    {
+      "key": "user_224",
+      "name": "장보형 | Notion",
+      "aliases": [],
+      "user_id": 224
+    },
+    {
+      "key": "user_225",
+      "name": "장은수 | Notion",
+      "aliases": [],
+      "user_id": 225
+    },
+    {
+      "key": "user_226",
+      "name": "장은호 | Notion",
+      "aliases": [],
+      "user_id": 226
+    },
+    {
+      "key": "user_227",
+      "name": "장진형 | Notion",
+      "aliases": [],
+      "user_id": 227
+    },
+    {
+      "key": "user_228",
+      "name": "전성민 | Notion",
+      "aliases": [],
+      "user_id": 228
+    },
+    {
+      "key": "user_229",
+      "name": "전예준 | Notion",
+      "aliases": [],
+      "user_id": 229
+    },
+    {
+      "key": "user_230",
+      "name": "전형선 | Notion",
+      "aliases": [],
+      "user_id": 230
+    },
+    {
+      "key": "user_231",
+      "name": "정동주 | Notion",
+      "aliases": [],
+      "user_id": 231
+    },
+    {
+      "key": "user_232",
+      "name": "정민기 | Notion",
+      "aliases": [],
+      "user_id": 232
+    },
+    {
+      "key": "user_233",
+      "name": "정서현 | Notion",
+      "aliases": [],
+      "user_id": 233
+    },
+    {
+      "key": "user_234",
+      "name": "정수현 | Notion",
+      "aliases": [],
+      "user_id": 234
+    },
+    {
+      "key": "user_235",
+      "name": "정영인 | Notion",
+      "aliases": [],
+      "user_id": 235
+    },
+    {
+      "key": "user_236",
+      "name": "정우찬 | Notion",
+      "aliases": [],
+      "user_id": 236
+    },
+    {
+      "key": "user_237",
+      "name": "정원빈 | Notion",
+      "aliases": [],
+      "user_id": 237
+    },
+    {
+      "key": "user_238",
+      "name": "정원희 | Notion",
+      "aliases": [],
+      "user_id": 238
+    },
+    {
+      "key": "user_239",
+      "name": "정유환 | Notion",
+      "aliases": [],
+      "user_id": 239
+    },
+    {
+      "key": "user_240",
+      "name": "정윤아 | Notion",
+      "aliases": [],
+      "user_id": 240
+    },
+    {
+      "key": "user_241",
+      "name": "정이현 | Notion",
+      "aliases": [],
+      "user_id": 241
+    },
+    {
+      "key": "user_242",
+      "name": "정재원 | Notion",
+      "aliases": [],
+      "user_id": 242
+    },
+    {
+      "key": "user_243",
+      "name": "정제일 | Notion",
+      "aliases": [],
+      "user_id": 243
+    },
+    {
+      "key": "user_244",
+      "name": "정준영(8215) | Notion",
+      "aliases": [],
+      "user_id": 244
+    },
+    {
+      "key": "user_245",
+      "name": "정준영(8565) | Notion",
+      "aliases": [],
+      "user_id": 245
+    },
+    {
+      "key": "user_246",
+      "name": "정해찬 | Notion",
+      "aliases": [],
+      "user_id": 246
+    },
+    {
+      "key": "user_247",
+      "name": "정혜주 | Notion",
+      "aliases": [],
+      "user_id": 247
+    },
+    {
+      "key": "user_248",
+      "name": "정희진 | Notion",
+      "aliases": [],
+      "user_id": 248
+    },
+    {
+      "key": "user_249",
+      "name": "조성우 | Notion",
+      "aliases": [],
+      "user_id": 249
+    },
+    {
+      "key": "user_250",
+      "name": "조영서 | Notion",
+      "aliases": [],
+      "user_id": 250
+    },
+    {
+      "key": "user_251",
+      "name": "조영호 | Notion",
+      "aliases": [],
+      "user_id": 251
+    },
+    {
+      "key": "user_252",
+      "name": "조운재 | Notion",
+      "aliases": [],
+      "user_id": 252
+    },
+    {
+      "key": "user_253",
+      "name": "조원희 | Notion",
+      "aliases": [],
+      "user_id": 253
+    },
+    {
+      "key": "user_254",
+      "name": "조은성 | Notion",
+      "aliases": [],
+      "user_id": 254
+    },
+    {
+      "key": "user_255",
+      "name": "조재영 | Notion",
+      "aliases": [],
+      "user_id": 255
+    },
+    {
+      "key": "user_256",
+      "name": "조현빈 | Notion",
+      "aliases": [],
+      "user_id": 256
+    },
+    {
+      "key": "user_257",
+      "name": "조현준 | Notion",
+      "aliases": [],
+      "user_id": 257
+    },
+    {
+      "key": "user_258",
+      "name": "주장권 | Notion",
+      "aliases": [],
+      "user_id": 258
+    },
+    {
+      "key": "user_259",
+      "name": "주희정 | Notion",
+      "aliases": [],
+      "user_id": 259
+    },
+    {
+      "key": "user_260",
+      "name": "지상근 | Notion",
+      "aliases": [],
+      "user_id": 260
+    },
+    {
+      "key": "user_261",
+      "name": "진세림 (Selim Jin) | Notion",
+      "aliases": [],
+      "user_id": 261
+    },
+    {
+      "key": "user_262",
+      "name": "채민식 | Notion",
+      "aliases": [],
+      "user_id": 262
+    },
+    {
+      "key": "user_263",
+      "name": "천예준 | Notion",
+      "aliases": [],
+      "user_id": 263
+    },
+    {
+      "key": "user_264",
+      "name": "천진강 | Notion",
+      "aliases": [],
+      "user_id": 264
+    },
+    {
+      "key": "user_265",
+      "name": "최근호 | Notion",
+      "aliases": [],
+      "user_id": 265
+    },
+    {
+      "key": "user_266",
+      "name": "최병주 | Notion",
+      "aliases": [],
+      "user_id": 266
+    },
+    {
+      "key": "user_267",
+      "name": "최성호 | Notion",
+      "aliases": [],
+      "user_id": 267
+    },
+    {
+      "key": "user_268",
+      "name": "최수영 | Notion",
+      "aliases": [],
+      "user_id": 268
+    },
+    {
+      "key": "user_269",
+      "name": "최영현 | Notion",
+      "aliases": [],
+      "user_id": 269
+    },
+    {
+      "key": "user_270",
+      "name": "최우민 | Notion",
+      "aliases": [],
+      "user_id": 270
+    },
+    {
+      "key": "user_271",
+      "name": "최우영 | Notion",
+      "aliases": [],
+      "user_id": 271
+    },
+    {
+      "key": "user_272",
+      "name": "최원탁 | Notion",
+      "aliases": [],
+      "user_id": 272
+    },
+    {
+      "key": "user_273",
+      "name": "최인규 | Notion",
+      "aliases": [],
+      "user_id": 273
+    },
+    {
+      "key": "user_274",
+      "name": "최재용 | Notion",
+      "aliases": [],
+      "user_id": 274
+    },
+    {
+      "key": "user_275",
+      "name": "최재훈 | Notion",
+      "aliases": [],
+      "user_id": 275
+    },
+    {
+      "key": "user_276",
+      "name": "최준 | Notion",
+      "aliases": [],
+      "user_id": 276
+    },
+    {
+      "key": "user_277",
+      "name": "최준서 | Notion",
+      "aliases": [],
+      "user_id": 277
+    },
+    {
+      "key": "user_278",
+      "name": "최준원 | Notion",
+      "aliases": [],
+      "user_id": 278
+    },
+    {
+      "key": "user_279",
+      "name": "최현혜 | Notion",
+      "aliases": [],
+      "user_id": 279
+    },
+    {
+      "key": "user_280",
+      "name": "최희원 | Notion",
+      "aliases": [],
+      "user_id": 280
+    },
+    {
+      "key": "user_281",
+      "name": "추웅재 | Notion",
+      "aliases": [],
+      "user_id": 281
+    },
+    {
+      "key": "user_282",
+      "name": "하성훈 | Notion",
+      "aliases": [],
+      "user_id": 282
+    },
+    {
+      "key": "user_283",
+      "name": "하채리 | Notion",
+      "aliases": [],
+      "user_id": 283
+    },
+    {
+      "key": "user_284",
+      "name": "한승우 | Notion",
+      "aliases": [],
+      "user_id": 284
+    },
+    {
+      "key": "user_285",
+      "name": "한윤서 | Notion",
+      "aliases": [],
+      "user_id": 285
+    },
+    {
+      "key": "user_286",
+      "name": "한준희 | Notion",
+      "aliases": [],
+      "user_id": 286
+    },
+    {
+      "key": "user_287",
+      "name": "허나영 | Notion",
+      "aliases": [],
+      "user_id": 287
+    },
+    {
+      "key": "user_288",
+      "name": "허재원 | Notion",
+      "aliases": [],
+      "user_id": 288
+    },
+    {
+      "key": "user_289",
+      "name": "홍사인 | Notion",
+      "aliases": [],
+      "user_id": 289
+    },
+    {
+      "key": "user_290",
+      "name": "홍승연 | Notion",
+      "aliases": [],
+      "user_id": 290
+    },
+    {
+      "key": "user_291",
+      "name": "홍준일(팀빌딩 완료) | Notion",
+      "aliases": [],
+      "user_id": 291
+    },
+    {
+      "key": "user_292",
+      "name": "홍지연 | Notion",
+      "aliases": [],
+      "user_id": 292
+    },
+    {
+      "key": "user_293",
+      "name": "홍지호 | Notion",
+      "aliases": [],
+      "user_id": 293
+    },
+    {
+      "key": "user_294",
+      "name": "황석진 | Notion",
+      "aliases": [],
+      "user_id": 294
+    },
+    {
+      "key": "user_295",
+      "name": "황인성 | Notion",
+      "aliases": [],
+      "user_id": 295
+    },
+    {
+      "key": "user_296",
+      "name": "황채원 | Notion",
+      "aliases": [],
+      "user_id": 296
+    },
+    {
+      "key": "user_297",
+      "name": "황현석 | Notion",
+      "aliases": [],
+      "user_id": 297
+    },
+    {
+      "key": "user_1",
+      "name": "강경현 | Notion",
+      "aliases": [],
+      "user_id": 1
+    },
+    {
+      "key": "user_2",
+      "name": "강동우 | Notion",
+      "aliases": [],
+      "user_id": 2
+    },
+    {
+      "key": "user_3",
+      "name": "강동혁 | Notion",
+      "aliases": [],
+      "user_id": 3
+    },
+    {
+      "key": "user_4",
+      "name": "강병완 | Notion",
+      "aliases": [],
+      "user_id": 4
+    },
+    {
+      "key": "user_5",
+      "name": "강인화 | Notion",
+      "aliases": [],
+      "user_id": 5
+    },
+    {
+      "key": "user_6",
+      "name": "강준형 | Notion",
+      "aliases": [],
+      "user_id": 6
+    },
+    {
+      "key": "user_7",
+      "name": "강태진 | Notion",
+      "aliases": [],
+      "user_id": 7
+    },
+    {
+      "key": "user_8",
+      "name": "강현준 | Notion",
+      "aliases": [],
+      "user_id": 8
+    },
+    {
+      "key": "user_9",
+      "name": "강호승 | Notion",
+      "aliases": [],
+      "user_id": 9
+    },
+    {
+      "key": "user_10",
+      "name": "고경우 | Notion",
+      "aliases": [],
+      "user_id": 10
+    },
+    {
+      "key": "user_11",
+      "name": "고원규 | Notion",
+      "aliases": [],
+      "user_id": 11
+    },
+    {
+      "key": "user_12",
+      "name": "곽용진 | Notion",
+      "aliases": [],
+      "user_id": 12
+    },
+    {
+      "key": "user_13",
+      "name": "곽채연 | Notion",
+      "aliases": [],
+      "user_id": 13
+    },
+    {
+      "key": "user_14",
+      "name": "구효민 | Notion",
+      "aliases": [],
+      "user_id": 14
+    },
+    {
+      "key": "user_15",
+      "name": "권기혁 | Notion",
+      "aliases": [],
+      "user_id": 15
+    },
+    {
+      "key": "user_16",
+      "name": "권민성 | Notion",
+      "aliases": [],
+      "user_id": 16
+    },
+    {
+      "key": "user_17",
+      "name": "권오빈 | Notion",
+      "aliases": [],
+      "user_id": 17
+    }
+  ]
+}
