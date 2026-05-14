@@ -36,6 +36,9 @@ app.include_router(users_router)
 
 def get_safe_header(request: Request, name: str, max_length: int = 200) -> str:
     value = request.headers.get(name)
+    if value is None:
+        return "-"
+    value = value.strip()
     if not value:
         return "-"
     return value.replace("\r", " ").replace("\n", " ")[:max_length]

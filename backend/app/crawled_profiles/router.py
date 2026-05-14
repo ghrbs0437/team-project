@@ -70,7 +70,7 @@ def list_crawled_profiles(
         size,
         total,
         len(crawled_profiles),
-        q is not None,
+        bool(q),
     )
 
     return CrawledProfileListResponse(

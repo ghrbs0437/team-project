@@ -91,12 +91,16 @@ def update_user(
             status_code=status.HTTP_404_NOT_FOUND,
             detail="User not found",
         )
+    updated_fields = (
+        ",".join(user_update.model_dump(exclude_unset=True).keys())
+        or "none"
+    )
     updated_user = repository.update_user(db, user, user_update)
     logger.info(
         "[USERS UPDATE SUCCESS] request_id=%s | user_id=%s | updated_fields=%s",
         request.state.request_id,
         updated_user.id,
-        ",".join(user_update.model_dump(exclude_unset=True).keys()),
+        updated_fields,
     )
     return updated_user
 

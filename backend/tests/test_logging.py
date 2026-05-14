@@ -1,5 +1,6 @@
 import logging
 from collections.abc import Generator
+from contextlib import contextmanager
 
 import pytest
 from fastapi.testclient import TestClient
@@ -12,6 +13,16 @@ from app.main import app
 
 
 client = TestClient(app)
+
+
+@contextmanager
+def capture_app_logs(caplog) -> Generator[None, None, None]:
+    app_logger = logging.getLogger("app")
+    app_logger.addHandler(caplog.handler)
+    try:
+        yield
+    finally:
+        app_logger.removeHandler(caplog.handler)
 
 
 @pytest.fixture()
@@ -45,7 +56,7 @@ def api_client(db_session: Session) -> Generator[TestClient, None, None]:
 
 
 def test_successful_request_logs_to_server_only(caplog) -> None:
-    with caplog.at_level(logging.INFO):
+    with caplog.at_level(logging.INFO, logger="app"), capture_app_logs(caplog):
         response = client.get("/health")
 
     assert response.status_code == 200
@@ -68,7 +79,7 @@ def test_request_id_connects_http_and_route_logs(
 ) -> None:
     request_id = "test-request-123"
 
-    with caplog.at_level(logging.INFO):
+    with caplog.at_level(logging.INFO, logger="app"), capture_app_logs(caplog):
         response = api_client.post(
             "/users",
             json={"name": "log-test"},
@@ -103,5 +114,53 @@ def test_request_id_connects_http_and_route_logs(
         "[REQUEST END]" in message
         and f"request_id={request_id}" in message
         and "status_code=201" in message
+        for message in messages
+    )
+
+
+def test_blank_request_id_header_generates_new_request_id(caplog) -> None:
+    with caplog.at_level(logging.INFO, logger="app"), capture_app_logs(caplog):
+        response = client.get("/health", headers={"X-Request-ID": "   "})
+
+    assert response.status_code == 200
+    assert response.headers["X-Request-ID"]
+    assert (
+        response.headers["X-Request-ID"].strip()
+        == response.headers["X-Request-ID"]
+    )
+
+
+def test_empty_search_query_logs_search_not_applied(
+    api_client: TestClient,
+    caplog,
+) -> None:
+    with caplog.at_level(logging.INFO, logger="app"), capture_app_logs(caplog):
+        response = api_client.get("/crawled-profiles?q=")
+
+    assert response.status_code == 200
+    messages = [record.getMessage() for record in caplog.records]
+    assert any(
+        "[CRAWLED_PROFILES LIST SUCCESS]" in message
+        and "q_present=False" in message
+        for message in messages
+    )
+
+
+def test_empty_user_patch_logs_no_updated_fields(
+    api_client: TestClient,
+    caplog,
+) -> None:
+    create_response = api_client.post("/users", json={"name": "patch-log-test"})
+    user_id = create_response.json()["id"]
+
+    with caplog.at_level(logging.INFO, logger="app"), capture_app_logs(caplog):
+        response = api_client.patch(f"/users/{user_id}", json={})
+
+    assert response.status_code == 200
+    messages = [record.getMessage() for record in caplog.records]
+    assert any(
+        "[USERS UPDATE SUCCESS]" in message
+        and f"user_id={user_id}" in message
+        and "updated_fields=none" in message
         for message in messages
     )
