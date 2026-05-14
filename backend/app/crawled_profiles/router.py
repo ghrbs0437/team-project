@@ -1,3 +1,4 @@
+import logging
 import math
 import os
 
@@ -6,7 +7,7 @@ try:
 except ImportError:
     genai = None
 
-from fastapi import APIRouter, Body, Depends, HTTPException, Query, status
+from fastapi import APIRouter, Body, Depends, HTTPException, Query, Request, status
 from sqlalchemy.orm import Session
 
 from app.core.database import get_db
@@ -25,18 +26,30 @@ from app.users.schemas import UserCreate
 
 
 router = APIRouter(prefix="/crawled-profiles", tags=["crawled-profiles"])
+logger = logging.getLogger("app.crawled_profiles")
 
 
 @router.post("", response_model=CrawledProfileRead, status_code=status.HTTP_201_CREATED)
 def create_crawled_profile(
+    request: Request,
     profile_create: CrawledProfileCreate,
     db: Session = Depends(get_db),
 ) -> CrawledProfileRead:
-    return repository.create_crawled_profile(db, profile_create)
+    crawled_profile = repository.create_crawled_profile(db, profile_create)
+    logger.info(
+        "[CRAWLED_PROFILES CREATE SUCCESS] request_id=%s | profile_id=%s | source=%s | has_source_url=%s | raw_text_length=%s",
+        request.state.request_id,
+        crawled_profile.id,
+        crawled_profile.source,
+        crawled_profile.source_url is not None,
+        len(crawled_profile.raw_text),
+    )
+    return crawled_profile
 
 
 @router.get("", response_model=CrawledProfileListResponse)
 def list_crawled_profiles(
+    request: Request,
     page: int = Query(default=1, ge=1),
     size: int = Query(default=20, ge=1, le=100),
     q: str | None = Query(default=None),
@@ -50,6 +63,15 @@ def list_crawled_profiles(
         search_query=q,
     )
     total = repository.count_crawled_profiles(db, search_query=q)
+    logger.info(
+        "[CRAWLED_PROFILES LIST SUCCESS] request_id=%s | page=%s | size=%s | total=%s | returned=%s | q_present=%s",
+        request.state.request_id,
+        page,
+        size,
+        total,
+        len(crawled_profiles),
+        bool(q),
+    )
 
     return CrawledProfileListResponse(
         crawled_profiles=crawled_profiles,
@@ -62,6 +84,7 @@ def list_crawled_profiles(
 
 @router.post("/import-json", response_model=CrawledProfileImportResult)
 def import_crawled_profiles(
+    request: Request,
     payload: dict[str, list[str]] | list[CrawledProfileImportItem] = Body(...),
     db: Session = Depends(get_db),
 ) -> CrawledProfileImportResult:
@@ -76,6 +99,13 @@ def import_crawled_profiles(
         repository.create_crawled_profile(db, profile_create)
         imported_count += 1
 
+    logger.info(
+        "[CRAWLED_PROFILES IMPORT JSON SUCCESS] request_id=%s | imported_count=%s | skipped_count=%s | payload_type=%s",
+        request.state.request_id,
+        imported_count,
+        skipped_count,
+        "list" if isinstance(payload, list) else "object",
+    )
     return CrawledProfileImportResult(
         imported_count=imported_count,
         skipped_count=skipped_count,
@@ -84,6 +114,7 @@ def import_crawled_profiles(
 
 @router.post("/convert-to-users", response_model=CrawledProfileConvertToUsersResult)
 def convert_crawled_profiles_to_users(
+    request: Request,
     db: Session = Depends(get_db),
 ) -> CrawledProfileConvertToUsersResult:
     converted_count = 0
@@ -97,6 +128,12 @@ def convert_crawled_profiles_to_users(
         users_repository.create_user(db, build_user_create_from_crawled_profile(crawled_profile))
         converted_count += 1
 
+    logger.info(
+        "[CRAWLED_PROFILES CONVERT TO USERS SUCCESS] request_id=%s | converted_count=%s | skipped_count=%s",
+        request.state.request_id,
+        converted_count,
+        skipped_count,
+    )
     return CrawledProfileConvertToUsersResult(
         converted_count=converted_count,
         skipped_count=skipped_count,
@@ -225,16 +262,28 @@ def is_duplicate_crawled_profile(
 
 @router.get("/embedded", response_model=CrawledProfileListResponse)
 def search_embedded_crawled_profiles(
+    request: Request,
     context: str = Query(..., description="Context for vector embedding and similarity search"),
     page: int = Query(default=1, ge=1),
     size: int = Query(default=20, ge=1, le=100),
     db: Session = Depends(get_db),
 ) -> CrawledProfileListResponse:
     if genai is None:
-        raise HTTPException(status_code=500, detail="google-generativeai package is not installed.")
+        logger.warning(
+            "[CRAWLED_PROFILES EMBEDDED SEARCH UNAVAILABLE] request_id=%s | reason=missing_google_generativeai",
+            request.state.request_id,
+        )
+        raise HTTPException(
+            status_code=500,
+            detail="google-generativeai package is not installed.",
+        )
 
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
+        logger.warning(
+            "[CRAWLED_PROFILES EMBEDDED SEARCH REJECTED] request_id=%s | reason=missing_gemini_api_key",
+            request.state.request_id,
+        )
         raise HTTPException(status_code=500, detail="GEMINI_API_KEY is not set.")
 
     genai.configure(api_key=api_key)
@@ -247,10 +296,15 @@ def search_embedded_crawled_profiles(
         )
         query_embedding = result['embedding']
     except Exception as e:
+        logger.exception(
+            "[CRAWLED_PROFILES EMBEDDED SEARCH FAILED] request_id=%s | context_length=%s",
+            request.state.request_id,
+            len(context),
+        )
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Failed to generate embedding: {str(e)}"
-        )
+            detail="Failed to generate embedding."
+        ) from e
 
     profiles = repository.list_all_crawled_profiles(db)
     scored_profiles = []
@@ -273,6 +327,15 @@ def search_embedded_crawled_profiles(
     total = len(scored_profiles)
     skip = (page - 1) * size
     paginated_profiles = [p[1] for p in scored_profiles[skip:skip + size]]
+    logger.info(
+        "[CRAWLED_PROFILES EMBEDDED SEARCH SUCCESS] request_id=%s | context_length=%s | page=%s | size=%s | total=%s | returned=%s",
+        request.state.request_id,
+        len(context),
+        page,
+        size,
+        total,
+        len(paginated_profiles),
+    )
 
     return CrawledProfileListResponse(
         crawled_profiles=paginated_profiles,
@@ -286,23 +349,50 @@ def search_embedded_crawled_profiles(
 @router.get("/{profile_id}", response_model=CrawledProfileRead)
 def read_crawled_profile(
     profile_id: int,
+    request: Request,
     db: Session = Depends(get_db),
 ) -> CrawledProfileRead:
     profile = repository.get_crawled_profile(db, profile_id)
     if profile is None:
+        logger.warning(
+            "[CRAWLED_PROFILES READ NOT FOUND] request_id=%s | profile_id=%s",
+            request.state.request_id,
+            profile_id,
+        )
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail="Crawled profile not found",
         )
+    logger.info(
+        "[CRAWLED_PROFILES READ SUCCESS] request_id=%s | profile_id=%s | source=%s | has_source_url=%s",
+        request.state.request_id,
+        profile.id,
+        profile.source,
+        profile.source_url is not None,
+    )
     return profile
 
 
 @router.delete("/{profile_id}", status_code=status.HTTP_204_NO_CONTENT)
-def delete_crawled_profile(profile_id: int, db: Session = Depends(get_db)) -> None:
+def delete_crawled_profile(
+    profile_id: int,
+    request: Request,
+    db: Session = Depends(get_db),
+) -> None:
     profile = repository.get_crawled_profile(db, profile_id)
     if profile is None:
+        logger.warning(
+            "[CRAWLED_PROFILES DELETE NOT FOUND] request_id=%s | profile_id=%s",
+            request.state.request_id,
+            profile_id,
+        )
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail="Crawled profile not found",
         )
     repository.delete_crawled_profile(db, profile)
+    logger.info(
+        "[CRAWLED_PROFILES DELETE SUCCESS] request_id=%s | profile_id=%s",
+        request.state.request_id,
+        profile_id,
+    )
